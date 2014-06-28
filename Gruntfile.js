@@ -73,11 +73,35 @@ module.exports = function(grunt) {
       }
     },
 
-    // watch: {
-    //   options: {
+    watch: {
+      options: {
+        livereload: true
+      },
+      scripts: {
+        files: ["assets/js/**/*.js"],
+        tasks: ["jshint"]
+      },
+      less: {
+        files: ["assets/styles/**/*.less"],
+        tasks: ["less:dev"]
+      },
+      templates: {
+        files: ["assets/js/modules/**/*.hbs", "assets/templates/**/*.hbs"],
+        tasks: ["handlebars:compile"]
+      }
+    },
 
-    //   }
-    // }
+    // Compile templates into templates.js
+    handlebars: {
+      compile: {
+        options: {
+          namespace: "JST"
+        },
+        files: {
+          "assets/templates/templates.js": "assets/templates/**/*.hbs"
+        }
+      }
+    }
 
   });
 
@@ -88,6 +112,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-requirejs");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-handlebars");
 
   // Third-party tasks
   grunt.loadNpmTasks("grunt-processhtml");

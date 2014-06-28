@@ -2,17 +2,17 @@
 require.config({
   baseUrl: "assets/js",
 
-  // NOTE: Might not need handlebars here. I think we will convert all HB templates
-  // to JS functions.
-
   paths: {
     jquery: "../../vendor/jquery/dist/jquery",
     underscore: "../../vendor/underscore/underscore",
     backbone: "../../vendor/backbone/backbone",
     marionette: "../../vendor/marionette/lib/backbone.marionette",
-    handlebars: "../../vendor/handlebars/handlebars",
     bootstrap: "../../vendor/bootstrap/dist/js/bootstrap",
-    "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon"
+    handlebars: "../../vendor/handlebars/handlebars.runtime",
+
+    // Require this to use compiled templates, it depends on HBS runtime.
+    templates: "../templates/templates",
+    "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
   },
 
   shim: {
@@ -28,7 +28,13 @@ require.config({
       deps: ["backbone"],
       exports: "Marionette"
     },
-    bootstrap: ["jquery"]
+    bootstrap: ["jquery"],
+    handlebars: {
+      exports: "Handlebars"
+    },
+    templates: {
+      deps: ["handlebars"]
+    }
   }
 
 });
