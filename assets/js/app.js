@@ -24,12 +24,15 @@ define(['marionette'], function(Marionette) {
 
   // Initializers
   App.addInitializer(function(){
-    console.log("initializer");
-    require(["apps/header/header_app"], function(){
-      console.log("nothing!", App.module("HeaderApp"));
-      // App.module("HeaderApp").start();
-      App.module("HeaderApp").trigger('start');
+    // require(["apps/header/header_app"], function(){
+    //   App.module("HeaderApp").trigger('start');
+    // });
+
+    // Start Header
+    require(["apps/header-rjs/header_app"], function(HeaderApp){
+      HeaderApp.start();
     });
+
   });
 
   // Fires after app has started and initializers have executed.

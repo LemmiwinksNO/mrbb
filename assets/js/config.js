@@ -10,6 +10,7 @@ require.config({
     bootstrap: "../../vendor/bootstrap/dist/js/bootstrap",
     handlebars: "../../vendor/handlebars/handlebars.runtime",
     "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
+    "backbone.wreqr": "../../vendor/backbone.wreqr/lib/backbone.wreqr",
 
     // Require this to use compiled templates, it depends on HBS runtime.
     templates: "../templates/templates",
@@ -24,6 +25,7 @@ require.config({
       exports: "Backbone"
     },
     "backbone.syphon": ["backbone"],
+    "backbone.wreqr": ["backbone"],
     marionette: {
       deps: ["backbone"],
       exports: "Marionette"

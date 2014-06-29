@@ -11,8 +11,18 @@ module.exports = function(grunt) {
       files: ["assets/js/**/*.js"]
     },
 
+    // Compile LESS, compress it and create a sourcemap so we can
+    // see in chrome dev console where the css came from.
     less: {
       dev: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2,
+          sourceMap: true,
+          sourceMapFilename: "assets/styles/main.css.map",
+          sourceMapBasepath: "assets/styles",
+        },
         files: {
           "assets/styles/index.css": "assets/styles/index.less"
         }
