@@ -96,7 +96,7 @@ module.exports = function(grunt) {
         tasks: ["less:dev"]
       },
       templates: {
-        files: ["assets/js/modules/**/*.hbs", "assets/templates/**/*.hbs"],
+        files: ["assets/js/apps/**/*.hbs", "assets/templates/**/*.hbs"],
         tasks: ["handlebars:compile"]
       }
     },
