@@ -9,10 +9,10 @@ require.config({
     marionette: "../../vendor/marionette/lib/backbone.marionette",
     bootstrap: "../../vendor/bootstrap/dist/js/bootstrap",
     handlebars: "../../vendor/handlebars/handlebars.runtime",
+    "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
 
     // Require this to use compiled templates, it depends on HBS runtime.
     templates: "../templates/templates",
-    "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
   },
 
   shim: {
