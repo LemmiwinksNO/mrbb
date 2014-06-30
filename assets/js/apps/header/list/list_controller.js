@@ -1,4 +1,4 @@
-define(['app', 'apps/header/list/list_view'], function(App){
+define(['app', 'apps/header/list/list_views'], function(App){
   App.module("HeaderApp.List", function(List, App, Backbone, Marionette, $, _){
 
     List.Controller = Marionette.Controller.extend({

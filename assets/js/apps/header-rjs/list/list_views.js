@@ -1,8 +1,8 @@
 define(['app', 'bootstrap', 'templates'], function(App){
 
-  View = {
+  var View = {
     Header: Marionette.ItemView.extend({
-      template: "header/list/header"
+      template: "header-rjs/list/header"
     })
   };
 

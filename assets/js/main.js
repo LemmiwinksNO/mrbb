@@ -44,5 +44,5 @@ requirejs.config({
 
 // Start the app
 require(["app"], function(App) {
-  App.start({environment: "development"});
+  App.start({environment: "fake environment name"});
 });

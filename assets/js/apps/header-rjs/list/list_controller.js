@@ -1,4 +1,4 @@
-define(['app', 'apps/header-rjs/list/list_view'], function(App, View){
+define(['app', 'apps/header-rjs/list/list_views'], function(App, View){
 
   var ListController = Marionette.Controller.extend({
 

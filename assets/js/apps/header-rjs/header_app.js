@@ -1,49 +1,32 @@
 define(['app'], function(App){
 
-  function HeaderApp2 () {
-    this.list = function() {
-      require(["apps/header-rjs/list/list_controller"], function(ListController){
-        new ListController({
-          region: App.headerRegion
-        });
-      });
-    };
-  }
-
-  // return new HeaderApp2();
-
-  var HeaderApp = {
-    list: function() {
-      require(["apps/header-rjs/list/list_controller"], function(ListController){
-        new ListController({
-          region: App.headerRegion
-        });
-      });
-    }
-  };
-
-  // return HeaderApp;
-
-
-
-
-  // This is a bit more like the pattern in BBRails
   API = {
-    list: function(){
+    list: function(region){
       require(["apps/header-rjs/list/list_controller"], function(ListController){
         new ListController({
-          region: App.headerRegion
+          region: region
         });
       });
     }
   };
 
-  function HeaderApp3() {
-    this.start = function(){
-      API.list();
+  function HeaderApp() {
+    this.start = function(region){
+      API.list(region);
     };
   }
 
-  return new HeaderApp3();
+  var HeaderApp2 = {
+    start: function(region){
+      API.list(region);
+    }
+  };
+
+
+  // We want to list the header app when this file loads.
+  API.list(App.headerRegion);
+
+  // return HeaderApp2;
+  return new HeaderApp();
 
 });
