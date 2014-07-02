@@ -131,7 +131,7 @@ module.exports = function(grunt) {
   // Third-party tasks
   grunt.loadNpmTasks("grunt-processhtml");
 
-
+  // Custom tasks
   grunt.registerTask("release", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
-
+  // grunt.registerTask("heroku", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
 };
