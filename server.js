@@ -25,11 +25,11 @@ app.configure(function(){
 
 // routes ======================================================================
 app.get('*', function(req, res) {
-  // if (app.settings.env == 'production') {
-  res.sendfile('./index-prod.html');
-  // } else {
+  if (app.settings.env == 'production') {
+    res.sendfile('./index-prod.html');
+  } else {
     res.sendfile('./index-dev.html');
-  // }
+  }
 });
 
 // listen (start app with node server.js) ======================================
