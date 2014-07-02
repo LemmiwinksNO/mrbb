@@ -39,7 +39,7 @@ app.configure('production', function(){
 // require('./routes/notdoing')(app, mongoose);  // not doing list
 
 // Start the app
-var port = Number(process.env.Port || 5000);
+var port = Number(process.env.PORT || 5000);
 app.listen(port, function(){
   console.log("listening on " + port);
 });
