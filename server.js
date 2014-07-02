@@ -1,8 +1,8 @@
 
 var express   = require('express'),
-    logfmt = require("logfmt");
+    logfmt = require("logfmt"),
     // routes    = require('./routes'),
-    // path      = require('path'),
+    path      = require('path');
   // mongoose  = require('mongoose');
 
 // mongoose.connect('mongodb://localhost/my_database');
