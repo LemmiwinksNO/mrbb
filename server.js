@@ -43,7 +43,7 @@ app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
 app.use(express.static(__dirname));
 
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendfile('./index2.html');
   // res.send("check it " + __dirname);
 });
