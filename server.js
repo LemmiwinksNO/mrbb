@@ -42,10 +42,10 @@ var app = express();  // export so we can use it for tests
 app.use(logfmt.requestLogger());
 app.use(express.static(path.join(__dirname + "/dist")));
 
-app.get('/', function(req, res) {
-  res.sendfile('./dist/index.html');
-  // res.send("")
-});
+// app.get('/', function(req, res) {
+//   res.sendfile('./dist/index.html');
+//   // res.send("")
+// });
 
 // Start the app
 var port = Number(process.env.PORT || 5000);
