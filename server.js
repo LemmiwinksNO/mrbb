@@ -41,10 +41,10 @@ var app = express();  // export so we can use it for tests
 
 app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname));
 
 app.get('*', function(req, res) {
-  res.sendfile('./dist/index.html');
+  res.sendfile('./index2.html');
   // res.send("check it " + __dirname);
 });
 
