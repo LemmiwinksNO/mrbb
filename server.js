@@ -41,7 +41,7 @@ var app = express();  // export so we can use it for tests
 
 app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
-app.user(express.static('/'));
+app.use(express.static('/'));
 
 app.get('/', function(req, res) {
   res.sendfile('./dist/index.html');
