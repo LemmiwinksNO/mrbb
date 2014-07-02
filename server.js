@@ -38,5 +38,10 @@ app.configure('production', function(){
 // require('./routes/notdoing')(app, mongoose);  // not doing list
 
 // Start the app
+var port = Number(process.env.Port || 5000);
+app.listen(port, function(){
+  console.log("listening on " + port);
+});
+
 app.listen(app.settings.port);
 console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
