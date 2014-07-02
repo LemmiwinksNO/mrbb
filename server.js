@@ -40,9 +40,11 @@ var app = express();  // export so we can use it for tests
 // require('./routes/notdoing')(app, mongoose);  // not doing list
 
 app.use(logfmt.requestLogger());
+app.use(express.static(__dirname));
 
 app.get('/', function(req, res) {
   res.sendfile('./dist/index.html');
+  // res.send("")
 });
 
 // Start the app
