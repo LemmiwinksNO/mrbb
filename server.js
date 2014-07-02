@@ -42,7 +42,7 @@ var app = express();  // export so we can use it for tests
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  res.sendfile('./dist/index.html');
 });
 
 // Start the app
