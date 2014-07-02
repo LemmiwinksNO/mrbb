@@ -1,55 +1,36 @@
-
+// set up ======================================================================
 var express   = require('express');
-    // routes    = require('./routes'),
-    // path      = require('path');
-  // mongoose  = require('mongoose');
-
-// mongoose.connect('mongodb://localhost/my_database');
-
 var app = express();
+var mongoose  = require('mongoose');
+
+// configuration ===============================================================
+mongoose.connect('mongodb://localhost/my_database');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 4000);
   app.set('env', process.env.NODE_ENV || process.argv[2] || 'development');  // Now you can set environment via command line.
-//   app.use(express.bodyParser());  // parses request body according to content type in request.
-//   app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
-//   app.use(app.router);
   app.use(express.static(__dirname));  // lets you access everything rather than just /public or /app
-//   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.bodyParser());  // parses request body according to content type in request.
+  app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
 });
 
-// app.configure('development', function(){
-//   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-// });
+app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
 
-// app.configure('test', function(){
-//   app.set('port', 4001);
-// });
-
-// app.configure('production', function(){
-//   app.use(express.static(path.join(__dirname + "/dist")));
-//   app.use(express.errorHandler());
-//   // app.set('port', 4002);
-// });
+app.configure('production', function(){
+  app.use(express.errorHandler());
+  app.set('port', 4002);
+});
 
 // routes ======================================================================
-
-// require('./routes/index')(app);  // index
-// require('./routes/notdoing')(app, mongoose);  // not doing list
-
-// app.use(express.static(__dirname));
-
 app.get('*', function(req, res) {
-  res.sendfile('./index-prod.html');
+  if (app.settings.env == 'production') {
+    res.sendfile('./index-prod.html');
+  } else {
+    res.sendfile('./index-dev.html');
+  }
 });
-
-
-// Start the app
-// var port = Number(process.env.PORT || 5000);
-
-// app.listen(port, function(){
-//   console.log("listening on " + port);
-// });
 
 // listen (start app with node server.js) ======================================
 app.listen(app.settings.port, function() {
