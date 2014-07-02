@@ -41,11 +41,13 @@ var app = express();
 // app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
 
+app.use(app.router);
+app.use(express.static(__dirname));
+
 app.get('*', function(req, res) {
   res.sendfile('./something.html');
 });
 
-app.use(express.static(__dirname));
 
 // Start the app
 var port = Number(process.env.PORT || 5000);
