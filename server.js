@@ -1,18 +1,17 @@
 
-var express   = require('express'),
-    logfmt = require("logfmt"),
+var express   = require('express');
+    // logfmt = require("logfmt"),
     // routes    = require('./routes'),
-    path      = require('path');
+    // path      = require('path');
   // mongoose  = require('mongoose');
 
 // mongoose.connect('mongodb://localhost/my_database');
 
-var app = express();  // export so we can use it for tests
+var app = express();
 
 // app.configure(function(){
 //   app.set('port', process.env.PORT || 4000);
 //   // app.set('env', process.env.NODE_ENV || process.argv[2] || 'development');  // Now you can set environment via command line.
-//   app.set('env', 'production');
 //   app.use(express.bodyParser());  // parses request body according to content type in request.
 //   app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
 //   app.use(app.router);
@@ -39,14 +38,13 @@ var app = express();  // export so we can use it for tests
 // require('./routes/index')(app);  // index
 // require('./routes/notdoing')(app, mongoose);  // not doing list
 
-app.use(logfmt.requestLogger());
+// app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
 app.use(express.static(__dirname));
 
-// app.get('/', function(req, res) {
-//   res.sendfile('./index2.html');
-//   // res.send("check it " + __dirname);
-// });
+app.get('*', function(req, res) {
+  res.sendfile('./something.html');
+});
 
 // Start the app
 var port = Number(process.env.PORT || 5000);
