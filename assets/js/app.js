@@ -45,9 +45,9 @@ define(['marionette'], function(Marionette) {
       // Require our module parent files because they have routes in them.
       require(["apps/header-rjs/header_app", "apps/tasklist-rjs/tasklist_app"], function(){
         Backbone.history.start();
+        Backbone.history.navigate(App.rootRoute, {trigger: true});
       });
     }
-    Backbone.history.navigate(App.rootRoute, {trigger: true});
   });
 
   return App;

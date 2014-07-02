@@ -11,7 +11,7 @@ requirejs.config({
     handlebars: "../../vendor/handlebars/handlebars.runtime",
     "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
     "backbone.wreqr": "../../vendor/backbone.wreqr/lib/backbone.wreqr",
-    "backbone.localstorage": "../../vendor/backbone.localstorage/backbone.localStorage.js",
+    "backbone.localstorage": "../../vendor/backbone.localstorage/backbone.localStorage",
 
     // Require this to use compiled templates, it depends on HBS runtime.
     templates: "../templates/templates",
