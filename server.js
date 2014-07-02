@@ -1,10 +1,10 @@
 // set up ======================================================================
 var express   = require('express');
 var app = express();
-var mongoose  = require('mongoose');
+// var mongoose  = require('mongoose');
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/my_database');
+// mongoose.connect('mongodb://localhost/my_database');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 4000);
@@ -14,22 +14,22 @@ app.configure(function(){
   app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
 });
 
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
+// app.configure('development', function(){
+//   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+// });
 
-app.configure('production', function(){
-  app.use(express.errorHandler());
-  app.set('port', 4002);
-});
+// app.configure('production', function(){
+//   app.use(express.errorHandler());
+//   app.set('port', 4002);
+// });
 
 // routes ======================================================================
 app.get('*', function(req, res) {
-  if (app.settings.env == 'production') {
-    res.sendfile('./index-prod.html');
-  } else {
+  // if (app.settings.env == 'production') {
+  res.sendfile('./index-prod.html');
+  // } else {
     res.sendfile('./index-dev.html');
-  }
+  // }
 });
 
 // listen (start app with node server.js) ======================================
