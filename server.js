@@ -1,6 +1,5 @@
 
 var express   = require('express');
-    // logfmt = require("logfmt"),
     // routes    = require('./routes'),
     // path      = require('path');
   // mongoose  = require('mongoose');
@@ -45,7 +44,7 @@ var app = express();
 app.use(express.static(__dirname));
 
 app.get('*', function(req, res) {
-  res.sendfile('./something.html');
+  res.sendfile('./index-prod.html');
 });
 
 
