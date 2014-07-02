@@ -30,7 +30,7 @@ app.configure('test', function(){
 app.configure('production', function(){
   app.use(express.static(path.join(__dirname + "/dist")));
   app.use(express.errorHandler());
-  app.set('port', 4002);
+  // app.set('port', 4002);
 });
 
 // Routes - Controller code and URL handlers
@@ -44,5 +44,5 @@ app.listen(port, function(){
   console.log("listening on " + port);
 });
 
-app.listen(app.settings.port);
-console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
+// app.listen(app.settings.port);
+// console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
