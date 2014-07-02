@@ -13,9 +13,7 @@
   "dependencies": {
     "express": "^3.4.8",
     "mongodb": "^1.4.7",
-    "mongoose": "^3.8.12"
-  },
-  "devDependencies": {
+    "mongoose": "^3.8.12",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
