@@ -41,7 +41,7 @@ var app = express();
 // app.use(logfmt.requestLogger());
 // app.use(express.static(path.join(__dirname + "/dist")));
 
-app.use(app.router);
+// app.use(app.router);
 app.use(express.static(__dirname));
 
 app.get('*', function(req, res) {
