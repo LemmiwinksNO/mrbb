@@ -11,8 +11,8 @@ app.configure(function(){
   app.set('port', process.env.PORT || 4000);
   app.set('env', process.env.NODE_ENV || process.argv[2] || 'development');  // Now you can set environment via command line.
   app.use(express.static(__dirname));  // lets you access everything rather than just /public or /app
-  // app.use(express.bodyParser());  // parses request body according to content type in request.
-  // app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
+  app.use(express.bodyParser());  // parses request body according to content type in request.
+  app.use(express.methodOverride());  // Lets you make HTTP methods other than GET and POST
 });
 
 
