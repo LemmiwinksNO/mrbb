@@ -2,10 +2,11 @@
 var express   = require('express');
 var app = express();
 var mongoose  = require('mongoose');
+var db_url = process.env.MONGOHQ_URL || 'mongodb://localhost/my_database';
 
 
 // configuration ===============================================================
-// mongoose.connect('mongodb://localhost/my_database');
+mongoose.connect(db_url);
 
 app.configure(function(){
   app.set('port', process.env.PORT || 4000);
