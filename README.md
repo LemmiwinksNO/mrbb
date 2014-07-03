@@ -1,11 +1,10 @@
 Installation and Heroku Deployment
 ----------------------------------
 
-1. Install Node
-2. Install NPM
-3. Install Bower - npm install -g bower
-4. Install Grunt Command Line Interface - npm install -g grunt-cli
-5. git clone this repository
+1. Install Node and NPM - [Install via package-manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+3. Install Bower - `npm install -g bower`
+4. Install Grunt Command Line Interface - `npm install -g grunt-cli`
+5. `$ git clone https://github.com/LemmiwinksNO/mrbb'
 6. `cd mrbb`
 7. `npm install`
 8. `bower install`
@@ -21,7 +20,7 @@ Installation and Heroku Deployment
 14. `git commit -m "message"`
 14. `git push heroku master`
 
----
+
 
 Grunt
 -----
