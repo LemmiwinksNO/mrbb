@@ -2,6 +2,7 @@
 var express   = require('express');
 var app = express();
 var mongoose  = require('mongoose');
+// process.env.MONGOHQ_URL uses the MongoHQ Heroku addon
 var db_url = process.env.MONGOHQ_URL || 'mongodb://localhost/my_database';
 
 
