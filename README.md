@@ -6,5 +6,8 @@
 6. cd mrbb
 7. npm install
 8. bower install
-9. grunt watch
-10. grunt release - for production
+
+Grunt
+* grunt watch - jshint's scripts; compiles less; compiles handlebars templates.
+* grunt release - for production
+* grunt bower - Updates bower packages and copies the relevant ones to assets/js/vendor and assets/styles/vendor.
