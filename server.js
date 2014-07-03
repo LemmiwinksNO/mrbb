@@ -1,11 +1,11 @@
 // set up ======================================================================
 var express   = require('express');
 var app = express();
-var mongoose  = require('mongoose');
+// var mongoose  = require('mongoose');
 
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/my_database');
+// mongoose.connect('mongodb://localhost/my_database');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 4000);
