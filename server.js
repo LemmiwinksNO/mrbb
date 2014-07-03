@@ -1,7 +1,7 @@
 // set up ======================================================================
 var express   = require('express');
 var app = express();
-// var mongoose  = require('mongoose');
+var mongoose  = require('mongoose');
 
 
 // configuration ===============================================================
