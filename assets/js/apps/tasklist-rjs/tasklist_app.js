@@ -1,12 +1,11 @@
 define(['app'], function(App){
 
-  var TaskListApp = {
-    Router: Marionette.AppRouter.extend({
-      appRoutes: {
-        "tasklist" : "list"
-      }
-    })
-  };
+  // Another way to do this
+  var Router = Marionette.AppRouter.extend({
+    appRoutes: {
+      "tasklist" : "list"
+    }
+  });
 
   API = {
     list: function(){
@@ -16,11 +15,10 @@ define(['app'], function(App){
     }
   };
 
-  App.addInitializer(function(){
-    new TaskListApp.Router({
-      controller: API
-    });
+  new Router({
+    controller: API
   });
 
   return ;
+
 });

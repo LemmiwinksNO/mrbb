@@ -23,9 +23,9 @@ define(['app', 'apps/tasklist-rjs/list/list_views'], function(App, View){
           view.region.show(view.layout);
         });
       });
-
     },
 
+    // Setup and show focusRegion
     focusRegion: function(collection){
       var focusListView = this.getFocusListView(collection);
       this.layout.focusRegion.show(focusListView);

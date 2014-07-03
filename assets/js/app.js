@@ -23,7 +23,7 @@ define(['marionette'], function(Marionette) {
   });
 
   // Initializers
-  App.addInitializer(function(){
+  // App.addInitializer(function(){
     // require(["apps/header/header_app"], function(){
     //   App.module("HeaderApp").trigger('start');
     // });
@@ -31,7 +31,7 @@ define(['marionette'], function(Marionette) {
     // require(["apps/header-rjs/header_app"], function(HeaderApp){
       // HeaderApp.start(App.headerRegion);
     // });
-  });
+  // });
 
   // Default region apps can request.
   App.reqres.setHandler("default:region", function(){

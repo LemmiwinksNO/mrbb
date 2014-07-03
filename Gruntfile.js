@@ -133,4 +133,5 @@ module.exports = function(grunt) {
 
   // Custom tasks
   grunt.registerTask("release", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
+  grunt.registerTask("heroku:production", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
 };

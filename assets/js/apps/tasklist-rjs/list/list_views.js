@@ -1,5 +1,7 @@
 define(['app', 'bootstrap', 'templates'], function(App){
 
+  // Is there any advantage to this approach vs. creating 'View' as a function and
+  // instantiating it? User never has more than one of this 'View' at a time.
   var View = {};
 
   View.Layout = Marionette.LayoutView.extend({
@@ -35,4 +37,5 @@ define(['app', 'bootstrap', 'templates'], function(App){
   });
 
   return View;
+
 });
