@@ -88,8 +88,8 @@ module.exports = function(grunt) {
           { src: ["vendor/backbone.syphon/lib/backbone.syphon.js"], dest: "assets/js/vendor/backbone.syphon.js"},
           { src: ["vendor/backbone.wreqr/lib/backbone.wreqr.js"], dest: "assets/js/vendor/backbone.wreqr.js"},
           { src: ["vendor/backbone.localstorage/backbone.localStorage.js"], dest: "assets/js/vendor/backbone.localStorage.js"},
-          { src: ["vendor/bootstrap/less/bootstrap.less"], dest: "assets/styles/vendor/bootstrap.less"},
-          { src: ["vendor/font-awesome/less/font-awesome.less"], dest: "assets/styles/vendor/font-awesome.less"},
+          { src: ["vendor/bootstrap/less/**"], dest: "assets/styles/"},
+          { src: ["vendor/font-awesome/less/**"], dest: "assets/styles/"},
         ]
       }
     },
