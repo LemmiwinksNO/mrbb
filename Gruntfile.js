@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     // Compile LESS, compress it and create a sourcemap so we can
     // see in chrome dev console where the css came from.
     less: {
-      dev: {
+      main: {
         options: {
           compress: true,
           yuicompress: true,
