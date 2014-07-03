@@ -27,5 +27,6 @@
     "grunt-processhtml": "^0.3.3"
   },
   "devDependencies": {
+    "grunt-shell": "^0.7.0"
   }
 }

@@ -4,7 +4,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     // Empty and remove 'dist/' directory
-    clean: ["dist/"],
+    clean: {
+      release: ["dist/"],
+      bower: ["assets/js/vendor/", "assets/styles/vendor"]
+    },
 
     // Runs the application JavaScript through JSHint with the defaults.
     jshint: {
@@ -43,7 +46,8 @@ module.exports = function(grunt) {
           baseUrl: "assets/js",
 
           paths: {
-            "almond": "../../vendor/almond/almond"
+            // "almond": "../../vendor/almond/almond"
+            "almond": "vendor/almond"
           },
 
           // Include a minimal AMD implementation shim.
@@ -71,6 +75,22 @@ module.exports = function(grunt) {
         files: [
           { src: ["assets/images/**"], dest: "dist/"}
         ]
+      },
+      bower: {
+        files: [
+          { src: ["vendor/almond/almond.js"], dest: "assets/js/vendor/almond.js"},
+          { src: ["vendor/jquery/dist/jquery.js"], dest: "assets/js/vendor/jquery.js"},
+          { src: ["vendor/underscore/underscore.js"], dest: "assets/js/vendor/underscore.js"},
+          { src: ["vendor/backbone/backbone.js"], dest: "assets/js/vendor/backbone.js"},
+          { src: ["vendor/marionette/lib/backbone.marionette.js"], dest: "assets/js/vendor/backbone.marionette.js"},
+          { src: ["vendor/bootstrap/dist/js/bootstrap.js"], dest: "assets/js/vendor/bootstrap.js"},
+          { src: ["vendor/handlebars/handlebars.runtime.js"], dest: "assets/js/vendor/handlebars.runtime.js"},
+          { src: ["vendor/backbone.syphon/lib/backbone.syphon.js"], dest: "assets/js/vendor/backbone.syphon.js"},
+          { src: ["vendor/backbone.wreqr/lib/backbone.wreqr.js"], dest: "assets/js/vendor/backbone.wreqr.js"},
+          { src: ["vendor/backbone.localstorage/backbone.localStorage.js"], dest: "assets/js/vendor/backbone.localStorage.js"},
+          { src: ["vendor/bootstrap/less/bootstrap.less"], dest: "assets/styles/vendor/bootstrap.less"},
+          { src: ["vendor/font-awesome/less/font-awesome.less"], dest: "assets/styles/vendor/font-awesome.less"},
+        ]
       }
     },
 
@@ -79,6 +99,21 @@ module.exports = function(grunt) {
       release: {
         files: {
           "index-prod.html": ["index-dev.html"]
+        }
+      }
+    },
+
+    // Compile templates into templates.js
+    handlebars: {
+      compile: {
+        options: {
+          namespace: "JST",
+          processName: function(filePath) {
+            return filePath.replace(/^assets\/js\/apps\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
+          }
+        },
+        files: {
+          "assets/js/templates.js": "assets/js/apps/**/*.hbs"
         }
       }
     },
@@ -101,18 +136,10 @@ module.exports = function(grunt) {
       }
     },
 
-    // Compile templates into templates.js
-    handlebars: {
-      compile: {
-        options: {
-          namespace: "JST",
-          processName: function(filePath) {
-            return filePath.replace(/^assets\/js\/apps\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
-          }
-        },
-        files: {
-          "assets/templates/templates.js": "assets/js/apps/**/*.hbs"
-        }
+
+    shell: {
+      bower: {
+        command: 'bower update'
       }
     }
 
@@ -130,8 +157,15 @@ module.exports = function(grunt) {
 
   // Third-party tasks
   grunt.loadNpmTasks("grunt-processhtml");
+  grunt.loadNpmTasks('grunt-shell');
 
   // Custom tasks
-  grunt.registerTask("release", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
-  grunt.registerTask("heroku:production", ["clean", "jshint", "less", "requirejs", "cssmin", "copy", "processhtml"]);
+  grunt.registerTask("release", ["clean:release", "jshint", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
+
+  // Heroku task, called when we git push heroku
+  // https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
+  grunt.registerTask("heroku:production", ["clean:release", "jshint", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
+
+  // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
+  grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
 };

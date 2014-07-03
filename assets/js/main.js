@@ -3,18 +3,18 @@ requirejs.config({
   baseUrl: "assets/js",
 
   paths: {
-    jquery: "../../vendor/jquery/dist/jquery",
-    underscore: "../../vendor/underscore/underscore",
-    backbone: "../../vendor/backbone/backbone",
-    marionette: "../../vendor/marionette/lib/backbone.marionette",
-    bootstrap: "../../vendor/bootstrap/dist/js/bootstrap",
-    handlebars: "../../vendor/handlebars/handlebars.runtime",
-    "backbone.syphon": "../../vendor/backbone.syphon/lib/backbone.syphon",
-    "backbone.wreqr": "../../vendor/backbone.wreqr/lib/backbone.wreqr",
-    "backbone.localstorage": "../../vendor/backbone.localstorage/backbone.localStorage",
+    jquery: "vendor/jquery",
+    underscore: "vendor/underscore",
+    backbone: "vendor/backbone",
+    marionette: "vendor/backbone.marionette",
+    bootstrap: "vendor/bootstrap",
+    handlebars: "vendor/handlebars.runtime",
+    "backbone.syphon": "vendor/backbone.syphon",
+    "backbone.wreqr": "vendor/backbone.wreqr",
+    "backbone.localstorage": "vendor/backbone.localStorage",
 
     // Require this to use compiled templates, it depends on HBS runtime.
-    templates: "../templates/templates",
+    templates: "templates",
   },
 
   shim: {
