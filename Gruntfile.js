@@ -168,4 +168,5 @@ module.exports = function(grunt) {
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
   grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
+
 };
