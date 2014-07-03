@@ -76,6 +76,7 @@ module.exports = function(grunt) {
           { src: ["assets/images/**"], dest: "dist/"}
         ]
       },
+      // Copy over relevant files from bower install
       bower: {
         files: [
           { src: ["vendor/almond/almond.js"], dest: "assets/js/vendor/almond.js"},
@@ -164,7 +165,7 @@ module.exports = function(grunt) {
 
   // Heroku task, called when we git push heroku
   // https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
-  grunt.registerTask("heroku:production", ["clean:release", "jshint", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
+  grunt.registerTask("heroku:production", ["release"]);
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
   grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
