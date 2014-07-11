@@ -28,7 +28,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</span>\n    <div class=\"edit-focus\">\n      <span class=\"glyphicon glyphicon-pencil\"></span>\n    </div>\n  </header>\n  <div class=\"input-group input-group-lg\">\n    <input type=\"text\" class=\"form-control\" name=\"new-task-title\" placeholder=\"New Task\">\n    <span class=\"input-group-btn\">\n      <button class=\"btn btn-default new-task\" type=\"button\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </button>\n    </span>\n  </div>\n  <hr>\n  <ul class=\"task-list\"></ul>\n</div><!-- .focus-item.well -->\n";
+    + "</span>\n    <div class=\"edit-focus\">\n      <span class=\"glyphicon glyphicon-pencil\"></span>\n    </div>\n  </header>\n  <div class=\"input-group input-group-lg\">\n    <input type=\"text\" class=\"form-control\" name=\"new-task-title\" placeholder=\"New Task\">\n    <span class=\"input-group-btn\">\n      <button class=\"btn btn-default new-task\" type=\"button\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n        \n      </button>\n    </span>\n  </div>\n  <hr>\n  <ul class=\"task-list\"></ul>\n</div><!-- .focus-item.well -->\n";
   return buffer;
   });
 

@@ -73,7 +73,10 @@ module.exports = function(grunt) {
     copy: {
       release: {
         files: [
-          { src: ["assets/images/**"], dest: "dist/"}
+          { src: ["assets/images/**"], dest: "dist/"},
+          { src: ["server.js"], dest: "dist/server.js"},
+          { src: ["Procfile"], dest: "dist/Procfile"},
+          { src: ["package.json"], dest: "dist/package.json"}
         ]
       },
       // Copy over relevant files from bower install
@@ -99,7 +102,7 @@ module.exports = function(grunt) {
     processhtml: {
       release: {
         files: {
-          "index-prod.html": ["index-dev.html"]
+          "dist/index.html": ["index.html"]
         }
       }
     },
@@ -165,9 +168,14 @@ module.exports = function(grunt) {
 
   // Heroku task, called when we git push heroku
   // https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
-  grunt.registerTask("heroku:production", ["release"]);
+  // grunt.registerTask("heroku:production", ["release"]);
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
   grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
 
+  // Heroku deploy task - my thought is to do 'release', then shell command git subtree push
+  // heroku master using that dist directory. We'd also have to update copy to copy over
+  // server.js, Procfile, package.json, and index.html. I like this approach a bit more
+  // than the current one b/c we see exactly what heroku gets.
+  //
 };
