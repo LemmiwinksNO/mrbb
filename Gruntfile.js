@@ -76,7 +76,10 @@ module.exports = function(grunt) {
           { src: ["assets/images/**"], dest: "dist/"},
           { src: ["server.js"], dest: "dist/server.js"},
           { src: ["Procfile"], dest: "dist/Procfile"},
-          { src: ["package.json"], dest: "dist/package.json"}
+          { src: ["package.json"], dest: "dist/package.json"},
+          { src: [".bowerrc"], dest: "dist/.bowerrc"},
+          { src: ["README.md"], dest: "dist/README.md"},
+          { src: ["bower.json"], dest: "dist/bower.json"}
         ]
       },
       // Copy over relevant files from bower install
