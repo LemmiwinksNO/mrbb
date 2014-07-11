@@ -144,6 +144,9 @@ module.exports = function(grunt) {
     shell: {
       bower: {
         command: 'bower update'
+      },
+      heroku: {
+        command: 'git subtree push -f --prefix dist heroku master'
       }
     }
 
@@ -164,18 +167,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   // Custom tasks
-  grunt.registerTask("release", ["clean:release", "jshint", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
+  grunt.registerTask("release", ["clean:release", "jshint", "handlebars", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
 
-  // Heroku task, called when we git push heroku
+  // Heroku task called by heroku server when we deploy.
   // https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
   // grunt.registerTask("heroku:production", ["release"]);
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
   grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
 
-  // Heroku deploy task - my thought is to do 'release', then shell command git subtree push
-  // heroku master using that dist directory. We'd also have to update copy to copy over
-  // server.js, Procfile, package.json, and index.html. I like this approach a bit more
-  // than the current one b/c we see exactly what heroku gets.
-  //
+  // Heroku deploy task
+  grunt.registerTask("heroku", ["shell:heroku"]);
 };
