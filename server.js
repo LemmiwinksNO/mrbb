@@ -1,7 +1,9 @@
+
 // set up ======================================================================
 var express   = require('express');
 var app = express();
 var mongoose  = require('mongoose');
+
 // process.env.MONGOHQ_URL uses the MongoHQ Heroku addon
 var db_url = process.env.MONGOHQ_URL || 'mongodb://localhost/my_database';
 
@@ -19,17 +21,6 @@ app.configure(function(){
 
 
 // routes ======================================================================
-
-// Had to divide it up this way because I want an index.html for production and
-// development, and it MUST be in root directory. Also, you can't specify
-// something other than index.html if there is an index.html.
-// app.get('*', function(req, res) {
-//   if (app.settings.env == 'production') {
-//     res.sendfile('./index-prod.html');
-//   } else {
-//     res.sendfile('./index-dev.html');
-//   }
-// });
 
 
 // listen (start app with node server.js) ======================================
