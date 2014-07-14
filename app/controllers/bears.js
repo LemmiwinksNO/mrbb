@@ -1,0 +1,59 @@
+
+var Bear = require('../models/bear');
+
+exports.create = function(req, res) {
+  var bear = new Bear();
+  bear.name = req.body.name;
+
+  bear.save(function(err) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'Bear created!' });
+  });
+};
+
+exports.getAll = function(req, res) {
+  Bear.find(function(err, bears) {
+    if (err)
+      res.send(err);
+
+    res.json(bears);
+  });
+};
+
+exports.get = function(req, res) {
+  Bear.findById(req.params.bear_id, function(err, bear) {
+    if (err)
+      res.send(err);
+
+    res.json(bear);
+  });
+};
+
+exports.update = function(req, res) {
+  Bear.findById(req.params.bear_id, function(err, bear) {
+    if (err)
+      res.send(err);
+
+    bear.name = req.body.name; // update bear info
+
+    bear.save(function(err) {
+      if (err)
+        res.send(err);
+
+      res.json({ message: 'Bear updated!' });
+    });
+  });
+};
+
+exports.delete = function(req, res) {
+  Bear.remove({
+    _id: req.params.bear_id
+  }, function(err, bear) {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'Successfully deleted' });
+  });
+};
