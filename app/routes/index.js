@@ -22,12 +22,12 @@ router.get('/', function(req, res) {
 
 
 // API ROUTES ==================================================================
+// Bear routes
 router
   .post('/bears', API.bears.create)
   .get('/bears', API.bears.getAll)
   .get('/bears/:bear_id', API.bears.get)
   .put('/bears/:bear_id', API.bears.update)
   .delete('/bears/:bear_id', API.bears.delete);
-
 
 module.exports = router;
