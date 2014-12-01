@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRBB</title>
+
+    <link rel="stylesheet" href="assets/styles/index.css">
+  </head>
+
+  <body>
+
+<div id="wrap">
+
+  <!-- Buttons on the side for sidebar and overlay -->
+  <nav class="site-nav">
+    <div class="toc sidebar">
+      <a class="site-toggle toggle"><i class="fa fa-bars"></i></a>
+      <a class="playbook-toggle toggle">T</a>
+      <a class="overlay-toggle toggle"><i class="fa fa-bars"></i></a>
+
+      <!-- Sidebar -->
+      <div class="inner">
+        <ul>
+          <li class="active"><span class="number">1</span> <a href="#hello">Introduction</a></li>
+          <li class=""><span class="number">2</span> <a href="/chapter/getting-started">Getting Started</a></li>
+          <li class=""><span class="number">2.5</span> <a href="/chapter/deploying">Deployment</a></li>
+          <li class=""><span class="number">3</span> <a href="/chapter/templates">Templates</a></li>
+          <li class=""><span class="number">3.5</span> <a href="/chapter/github">Using Git &amp; GitHub</a></li>
+          <li class=""><span class="number">4</span> <a href="/chapter/collections">Collections</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- OVERLAY -->
+  <div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><i class="fi-x"></i></button>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- PLAYBOOK DROPDOWN -->
+  <div class="playbook">
+    <ul>
+      <li><a href="#hello">Hello</a></li>
+      <li><a href="#time">Time</a>
+        <ul>
+          <li><a href="#consulting">Consulting</a></li>
+          <li><a href="#investment">Investment</a></li>
+        </ul>
+      </li>
+      <li><a href="#product-design-sprint">Product Design Sprint</a>
+        <ul>
+          <li><a href="#prep-work">Prep Work</a></li>
+          <li><a href="#understand">Understand</a></li>
+          <li><a href="#diverge">Diverge</a></li>
+          <li><a href="#converge">Converge</a></li>
+          <li><a href="#prototype">Prototype</a></li>
+          <li><a href="#test-and-learn">Test and Learn</a></li>
+        </ul>
+      </li>
+      <li><a href="#choose-platforms">Choose Platforms</a>
+        <ul>
+          <li><a href="#web-apps">Web Apps</a></li>
+          <li><a href="#mobile-apps">Mobile Apps</a></li>
+          <li><a href="#programming-languages">Programming Languages</a></li>
+          <li><a href="#frameworks">Frameworks</a></li>
+          <li><a href="#databases">Databases</a></li>
+          <li><a href="#licenses">Licenses</a></li>
+        </ul>
+      </li>
+      <li><a href="#laptop-setup">Laptop Setup</a>
+        <ul>
+          <li><a href="#laptop">Laptop</a></li>
+          <li><a href="#dotfiles">Dotfiles</a></li>
+          <li><a href="#text-editor">Text Editor</a></li>
+        </ul>
+      </li>
+      <li><a href="#planning">Planning</a>
+        <ul>
+          <li><a href="#daily-standups">Daily Standups</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#weekly-retrospectives">Weekly Retrospectives</a></li>
+          <li><a href="#planning-meeting">Planning Meeting</a></li>
+          <li><a href="#altering-the-process">Altering the Process</a></li>
+        </ul>
+      </li>
+      <li><a href="#designing">Designing</a>
+        <ul>
+          <li><a href="#sketches">Sketches</a></li>
+          <li><a href="#wireframes">Wireframes</a></li>
+          <li><a href="#user-interface">User Interface</a></li>
+          <li><a href="#interaction-design">Interaction Design</a></li>
+          <li><a href="#visual-design">Visual Design</a></li>
+          <li><a href="#usability-testing">Usability Testing</a></li>
+        </ul>
+      </li>
+      <li><a href="#developing">Developing</a>
+        <ul>
+          <li><a href="#version-control">Version Control</a></li>
+          <li><a href="#style-guide">Style Guide</a></li>
+          <li><a href="#pair-programming">Pair Programming</a></li>
+          <li><a href="#test-driven-development">Test-Driven Development</a></li>
+          <li><a href="#acceptance-tests">Acceptance Tests</a></li>
+          <li><a href="#refactoring">Refactoring</a></li>
+          <li><a href="#code-reviews">Code Reviews</a></li>
+          <li><a href="#continuous-integration">Continuous Integration</a></li>
+        </ul>
+      </li>
+      <li><a href="#production">Production</a>
+        <ul>
+          <li><a href="#checklist">Checklist</a></li>
+          <li><a href="#domain-names">Domain Names</a></li>
+          <li><a href="#ssl-certificates">SSL Certificates</a></li>
+          <li><a href="#hosting">Hosting</a></li>
+          <li><a href="#performance-monitoring">Performance Monitoring</a></li>
+          <li><a href="#error-tracking">Error Tracking</a></li>
+          <li><a href="#transactional-email">Transactional Email</a></li>
+          <li><a href="#payment-processing">Payment Processing</a></li>
+        </ul>
+      </li>
+      <li><a href="#measuring">Measuring</a>
+        <ul>
+          <li><a href="#aarrr">AARRR</a></li>
+          <li><a href="#instrumentation">Instrumentation</a></li>
+          <li><a href="#subscription-metrics">Subscription Metrics</a></li>
+          <li><a href="#ab-testing">A/B Testing</a></li>
+          <li><a href="#feature-flags">Feature Flags</a></li>
+        </ul>
+      </li>
+      <li><a href="#sales">Sales</a>
+        <ul>
+          <li><a href="#leads">Leads</a></li>
+          <li><a href="#understanding-product-vision">Understanding Product Vision</a></li>
+          <li><a href="#on-site-customer">On Site Customer</a></li>
+          <li><a href="#ndas">NDAs</a></li>
+          <li><a href="#roles">Roles</a></li>
+          <li><a href="#no-fixed-bids">No Fixed Bids</a></li>
+          <li><a href="#budget">Budget</a></li>
+          <li><a href="#rate">Rate</a></li>
+          <li><a href="#typical-projects">Typical Projects</a></li>
+          <li><a href="#contract">Contract</a></li>
+          <li><a href="#invoices">Invoices</a></li>
+        </ul>
+      </li>
+      <li><a href="#hiring">Hiring</a>
+        <ul>
+          <li><a href="#recruiting">Recruiting</a></li>
+          <li><a href="#interviewing">Interviewing</a></li>
+          <li><a href="#offer-and-onboarding">Offer and Onboarding</a></li>
+          <li><a href="#compensation">Compensation</a></li>
+          <li><a href="#quarterly-reviews">Quarterly Reviews</a></li>
+        </ul>
+      </li>
+      <li><a href="#operations">Operations</a>
+        <ul>
+          <li><a href="#expenses">Expenses</a></li>
+          <li><a href="#email">Email</a></li>
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#meetings">Meetings</a></li>
+          <li><a href="#accounting">Accounting</a></li>
+          <li><a href="#legal">Legal</a></li>
+        </ul>
+      </li>
+      <li><a href="#sharing">Sharing</a>
+        <ul>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#twitter">Twitter</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#open-source">Open Source</a></li>
+        </ul>
+      </li>
+      <li><a href="#goodbye">Goodbye</a></li>
+    </ul>
+  </div> <!-- id="playbook" -->
+
+
+  <div id="header-region">
+
+    <header>
+      <div class="contain-to-grid">
+        <nav class="top-bar">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#"><span id="logo"><img src="assets/ship.png" /></span>Growth App</a></h1>
+            </li>
+          </ul>
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="divider"></li>
+              <li><a href="#"><i class="general foundicon-graph"></i>Crew</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="general foundicon-graph"></i>Not Doing List</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="social foundicon-torso"></i>Backlog</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="social foundicon-torso"></i>Logger</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="social foundicon-torso"></i>Daily</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="social foundicon-torso"></i>Blog</a></li>
+              <li class="divider"></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </header>
+  </div> <!-- id="header-region" -->
+
+  <div id="main-region">
+
+    <section class="container">
+      <div class="row">
+        <div class="small-12 small-centered large-8 large-centered columns">
+          <div class="wiki-item">
+            <div class="wiki-item-header">Tool 1</div>
+            <div class="medium-editor" data-placeholder="What's the tool?">
+              <pre class="code">/*Updates highlight.js global options with values passed in the form of an object*/
+                function configure(user_options) {
+                  options = inherit(options, user_options);
+                }
+
+                /*
+                Applies highlighting to all blocks on a page.
+                */
+                function initHighlighting() {
+                  if (initHighlighting.called)
+                    return;
+                  initHighlighting.called = true;
+
+                  var blocks = document.querySelectorAll('pre code');
+                  // var blocks = document.querySelectorAll('pre');
+                  Array.prototype.forEach.call(blocks, highlightBlock);
+                }
+              </pre>
+            </div>
+          </div>
+
+          <div class="wiki-item">
+            <div class="wiki-item-header">Tool 2</div>
+            <div class="medium-editor" data-placeholder="What's the tool?">
+              <h3><span style="font-family: inherit; line-height: 1.6;">ANYTHING</span></h3>
+              <h4><span style="font-family: inherit; line-height: 1.6;">dfslkjhskldfj</span></h4>
+              <p>
+                <ol>
+                  <li><span style="font-family: inherit; line-height: 1.6;">lkjdfklj</span><br></li><li><span style="font-family: inherit; line-height: 1.6;">laskdfjldksjf</span></li>
+                </ol>
+                <p>
+                  <ul>
+                    <li>laksjdflkjds</li>
+                    <li>asdlkfj</li>
+                  </ul>
+                  <blockquote>alskdjfasdlfkjasdlfkj<br>laksjdflksdajflsjadflsdjk<br>as;ldkfjaslfjasldfkj<br>asdlkfjasdlkfj
+                  </blockquote>
+                  <pre class=" code hljs  hljs ">alskdjflasd kjsadlk jasd sdlkfjdslkfjsdlkjfsdlfgjsdlfkjg
+                  </pre>
+                </p>
+              </p>
+            </div>
+          </div>
+
+          <div class="wiki-item">
+            <div class="wiki-item-header">Tool 3</div>
+            <div class="medium-editor" data-placeholder="What's the tool?">
+              <pre class="code">var course = {};</pre>
+              <pre class=" code hljs javascript">&nbsp; &nbsp; &nbsp; &nbsp; bindTab: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(index)</span> {</span>
+                          <span class="hljs-keyword">this</span>.elements[index].addEventListener(<span class="hljs-string">'keydown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> {</span>
+                              <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">9</span>) {
+                                  <span class="hljs-comment">// Override tab only for pre nodes</span>
+                                  <span class="hljs-keyword">var</span> tag = getSelectionStart().tagName.toLowerCase();
+                                  <span class="hljs-keyword">if</span> (tag === <span class="hljs-string">"pre"</span>) {
+                                      e.preventDefault();
+                                      document.execCommand(<span class="hljs-string">'insertHtml'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'    '</span>);
+                                  }
+                              }
+                          });
+                          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;  <span class="hljs-comment">// for chaining purposes</span>
+                      },
+              </pre>
+            </div>
+          </div>
+
+          <div class="wiki-item">
+            <div class="wiki-item-header">Tool 4</div>
+            <div class="medium-editor" data-placeholder="What's the tool?">
+              <pre>function initHighlighting() { if (true) { face it }};</pre>
+            </div>
+          </div>
+
+          <div class="wiki-item"></div>
+            <div class="wiki-item-header">Tool 5</div>
+            <div><pre><code>function initHighlighting() { if (true) };</code></pre></div>
+          </div>
+
+          <div class="wiki-item"></div>
+            <div class="wiki-item-header">Tool 6</div>
+            <div><pre class="code">function initHighlighting() { if (true) };</pre></div>
+          </div>
+
+        </div>
+      </div> <!-- .row -->
+    </section>
+
+  </div> <!-- id="main-region" -->
+
+</div> <!-- id="wrap" -->
+
+<script type="text/javascript" src="assets/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="assets/js/vendor/medium_editor.js"></script>
+<script type="text/javascript" src="assets/js/vendor/highlight.js"></script>
+
+<script>
+var editor = new MediumEditor('.medium-editor', {
+  buttons: ['quote', 'pre', 'anchor', 'header1', 'header2', 'orderedlist', 'unorderedlist']
+});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<script>
+$(".playbook-toggle").click(function(){
+  $(".playbook").toggleClass("slide-down");
+});
+$(".site-toggle").click(function(){
+  $("body").toggleClass("toc-open");
+});
+$(".overlay-toggle").click(function(){
+  $(".overlay").removeClass("close");
+  $(".overlay").toggleClass("open");
+});
+$(".overlay-close").click(function(){
+  $(".overlay").removeClass("open");
+  $(".overlay").addClass("close");
+});
+
+
+// Insult Creator
+(function(){
+  function create_insult(intro) {
+    intro = intro || "";
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * (max));
+    }
+
+    function pickWord(array) {
+      return array[getRandomInt(array.length)];
+    }
+
+    intros = [
+      ["You are a "],
+      ["What's a ", " like you doing in a place like this?"],
+      ["You must have fell from heaven. They have ", "s up there right?"],
+      ["Who called this ", "?"],
+    ];
+
+    array_one = ["lazy", "stupid", "insecure", "idiotic", "slimy", "slutty", "smelly", "pompous", "communist", "dicknosed", "pie-eating", "racist", "elitist", "white trash", "drug-loving", "butterface", "tone deaf", "ugly", "creepy", "thunder"];
+
+    array_two = ["douche", "ass", "turd", "rectum", "butt", "cock", "shit", "crotch", "bitch", "prick", "slut", "taint", "fuck", "dick", "boner", "shart", "nut", "sphincter"];
+
+    array_three = ["cunt", "shit", "dick", "pilot", "canoe", "captain", "pirate", "hammer", "knob", "box", "jockey", "nazi", "waffle", "goblin", "blossum", "biscuit", "clown", "socket", "monster", "hound", "dragon", "balloon", "spindler", "pig"];
+
+    return function create() {
+      var one = pickWord(array_one),
+          two = pickWord(array_two),
+          three = pickWord(array_three),
+          intro = pickWord(intros);
+
+      var insult = one + " " + two + "-" + three;
+
+      if (intro.length == 1)
+        return intro[0] + insult;
+      else
+        return intro[0] + insult + intro[1];
+    };
+  }
+
+  window.insult = create_insult();
+})(window);
+
+
+// Random Reminder
+(function(){
+  function generateReminder(){
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * (max));
+    }
+
+    function pickReminder(array) {
+      return array[getRandomInt(array.length)];
+    }
+
+    reminders = [
+      "Process – Work as slow as possible. Focus on the process, not the result. Don't rush, there is no where to get to. There is only the present moment.",
+      "Presence – The quality of having one's entire mind and awareness in the present: not letting one's energy go into the unknowable future or the dead past. The goal is to stay in the present, every moment you do so, you are successful.",
+      "Action is everything. There is no tomorrow, only now. What will you do now? Keep moving forward. If you are moving, you are succeeding. Just do something. Do more than plan.",
+      "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender that is strength.",
+      "So! → It is transient. Everything is transient. This too will pass.",
+      "Acceptance and non-resistance → Don't look for peace. Don't look for any other state than the one you are in now, otherwise you set up inner conflict and unconscious resistance. Forgive yourself for not being at peace. Accept your current state. Be at peace with whatever you are feeling. The moment you completely accept your non-peace, your non-peace becomes transmuted into peace.",
+      "Be still and know that you are god.",
+      "Don't seek the truth. Just cease to cherish opinions.",
+      "Lean into the struggle.",
+      "Wherever you are, whatever you are doing, that is your purpose.",
+      "Don't wait for ideal circumstances → You will be waiting forever.",
+      "Faith → Faith is the act of letting go.",
+      "Feelings follow actions → Act like you want to feel. If you want to feel focused and energetic, act like it. Start working.",
+      "There are no problems here and now. There is no regret and remorse, that is the past. There is no worry or anxiety, that is the future.",
+      "Don't seek to become free of desire or achieve enlightenment. Become present. Be there as the observer of the mind. Instead of quoting the Buddha, be the Buddha.",
+      "Create no more pain in the present → Pain still occurs from past thoughts/actions, that is unavoidable, but you can avoid creating more.",
+      "\"You will be civilized on the day you can spend a long period doing nothing, learning nothing, and improving nothing, without feeling the slightest amount of guilt.\" - Nassim Nicholas Taleb",
+      "You are not your thoughts → Try to imagine your mind as a sky, and your thoughts as clouds passing by. Just as new clouds are always floating through the sky, different thoughts float through your mind. Like clouds, our thoughts are never static. They come into view, they change shape, they leave our view.",
+      "View Stress response as helpful → That pounding heart is upping blood flow and fast breathing is upping oxygen to prepare you for action.",
+      "\"I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.\"",
+      "Breathe",
+      "Every event that befalls me is the best possible event that could occur.",
+      "There is nothing good or bad, but thinking makes it so.",
+      "Focus on the positive, for what you focus on increases.",
+      "This too will pass.",
+      "It hurts less when you laugh.",
+      "When there is nothing to do, do nothing.",
+      "You can find peace anywhere, don't go looking for the tortoise with a moustache.",
+      "Pushing the wheelbarrow is easy, thinking about pushing the wheelbarrow is hard.",
+      "What is the most important Time? Who is the most important Person? What is the most important thing to do?",
+      "Let your ears hear what they want to hear, let your mind think what it wants to think, let your feet walk where they want to walk.",
+      "Don't rush, there is no where to get to.",
+      "Presence - the quality of having one’s entire mind and awareness in the present: being with someone, completely, not letting one’s energy go into the unknowable future or the dead past.",
+      "Peace – you can find peace anywhere. You don't go searching for peace, you stop moving, and it finds you. Let go of the past, forgive, don't worry about the future. Make peace with what you have to do and put fun in it.",
+      "Eight Worldly Winds – pleasure and pain, praise and blame, gain and loss, fame and ill repute. The greater your equanimity, the less the effect these winds have on your mind. Your happiness becomes increasingly unconditional, not based on catching a good breeze instead of a bad one.",
+      "Acceptance and non-resistance → Don't look for peace. Don't look for any other state than the one you are in now, otherwise you set up inner conflict and unconscious resistance. Forgive yourself for not being at peace. Accept your current state. The moment you completely accept your non-peace, your non-peace becomes transmuted into peace.",
+      "See things as they are → Much suffering comes from seeing things as you think they should be instead of how they are.",
+      "Accept everything just the way it is.",
+      "Think lightly of yourself and deeply of the world.",
+      "In all things have no preferences.",
+      "Don't long for a life free from hardship-such a life leads only to haughtiness and self-pampering. Make worries and hardships a way of life.",
+      "Don't hope for a lack of impediments in your study. Release is hiding right behind obstructions.",
+      "Don’t hope for a lack of temptations in your training. A lack of temptations will only serve to soften your resolve. Treat temptations as friends who are helping you along the path",
+      "Don’t hope for easy success. Easy accomplishment leads only to increased rashness. Accomplish through difficulties",
+      "Don’t expect rewards for your kindnesses. This leads only to a scheming mind. Throw out expectation of rewards like you’d thrown out old shoes",
+      "Don’t complain about vexations. This leads only to resentment and poison in the heart. Consider vexations as the first door on the path",
+    ];
+
+    return function create () {
+      return pickReminder(reminders);
+    };
+  }
+
+  window.generateReminder = generateReminder();
+})(window);
+
+
+// Random Reminder jQuery version
+// Takes a jQuery object and adds a reminder string via .text().
+(function(){
+  function generateReminder(){
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * (max));
+    }
+
+    function pickReminder(array) {
+      return array[getRandomInt(array.length)];
+    }
+
+    reminders = [
+      "Process – Work as slow as possible. Focus on the process, not the result. Don't rush, there is no where to get to. There is only the present moment.",
+      "Presence – The quality of having one's entire mind and awareness in the present: not letting one's energy go into the unknowable future or the dead past. The goal is to stay in the present, every moment you do so, you are successful.",
+      "Action is everything. There is no tomorrow, only now. What will you do now? Keep moving forward. If you are moving, you are succeeding. Just do something. Do more than plan.",
+      "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender that is strength.",
+      "So! → It is transient. Everything is transient. This too will pass.",
+      "Acceptance and non-resistance → Don't look for peace. Don't look for any other state than the one you are in now, otherwise you set up inner conflict and unconscious resistance. Forgive yourself for not being at peace. Accept your current state. Be at peace with whatever you are feeling. The moment you completely accept your non-peace, your non-peace becomes transmuted into peace.",
+      "Be still and know that you are god.",
+      "Don't seek the truth. Just cease to cherish opinions.",
+      "Lean into the struggle.",
+      "Wherever you are, whatever you are doing, that is your purpose.",
+      "Don't wait for ideal circumstances → You will be waiting forever.",
+      "Faith → Faith is the act of letting go.",
+      "Feelings follow actions → Act like you want to feel. If you want to feel focused and energetic, act like it. Start working.",
+      "There are no problems here and now. There is no regret and remorse, that is the past. There is no worry or anxiety, that is the future.",
+      "Don't seek to become free of desire or achieve enlightenment. Become present. Be there as the observer of the mind. Instead of quoting the Buddha, be the Buddha.",
+      "Create no more pain in the present → Pain still occurs from past thoughts/actions, that is unavoidable, but you can avoid creating more.",
+      "\"You will be civilized on the day you can spend a long period doing nothing, learning nothing, and improving nothing, without feeling the slightest amount of guilt.\" - Nassim Nicholas Taleb",
+      "You are not your thoughts → Try to imagine your mind as a sky, and your thoughts as clouds passing by. Just as new clouds are always floating through the sky, different thoughts float through your mind. Like clouds, our thoughts are never static. They come into view, they change shape, they leave our view.",
+      "View Stress response as helpful → That pounding heart is upping blood flow and fast breathing is upping oxygen to prepare you for action.",
+      "\"I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.\"",
+      "Breathe",
+      "Every event that befalls me is the best possible event that could occur.",
+      "There is nothing good or bad, but thinking makes it so.",
+      "Focus on the positive, for what you focus on increases.",
+      "This too will pass.",
+      "It hurts less when you laugh.",
+      "When there is nothing to do, do nothing.",
+      "You can find peace anywhere, don't go looking for the tortoise with a moustache.",
+      "Pushing the wheelbarrow is easy, thinking about pushing the wheelbarrow is hard.",
+      "What is the most important Time? Who is the most important Person? What is the most important thing to do?",
+      "Let your ears hear what they want to hear, let your mind think what it wants to think, let your feet walk where they want to walk.",
+      "Don't rush, there is no where to get to.",
+      "Presence - the quality of having one’s entire mind and awareness in the present: being with someone, completely, not letting one’s energy go into the unknowable future or the dead past.",
+      "Peace – you can find peace anywhere. You don't go searching for peace, you stop moving, and it finds you. Let go of the past, forgive, don't worry about the future. Make peace with what you have to do and put fun in it.",
+      "Eight Worldly Winds – pleasure and pain, praise and blame, gain and loss, fame and ill repute. The greater your equanimity, the less the effect these winds have on your mind. Your happiness becomes increasingly unconditional, not based on catching a good breeze instead of a bad one.",
+      "Acceptance and non-resistance → Don't look for peace. Don't look for any other state than the one you are in now, otherwise you set up inner conflict and unconscious resistance. Forgive yourself for not being at peace. Accept your current state. The moment you completely accept your non-peace, your non-peace becomes transmuted into peace.",
+      "See things as they are → Much suffering comes from seeing things as you think they should be instead of how they are.",
+      "Accept everything just the way it is.",
+      "Think lightly of yourself and deeply of the world.",
+      "In all things have no preferences.",
+      "Don't long for a life free from hardship-such a life leads only to haughtiness and self-pampering. Make worries and hardships a way of life.",
+      "Don't hope for a lack of impediments in your study. Release is hiding right behind obstructions.",
+      "Don’t hope for a lack of temptations in your training. A lack of temptations will only serve to soften your resolve. Treat temptations as friends who are helping you along the path",
+      "Don’t hope for easy success. Easy accomplishment leads only to increased rashness. Accomplish through difficulties",
+      "Don’t expect rewards for your kindnesses. This leads only to a scheming mind. Throw out expectation of rewards like you’d thrown out old shoes",
+      "Don’t complain about vexations. This leads only to resentment and poison in the heart. Consider vexations as the first door on the path",
+    ];
+
+    return function create () {
+      return pickReminder(reminders);
+    };
+  }
+
+  $.fn.generateReminder = function() {
+    var reminder = generateReminder()();
+    this.html("<i>" + reminder + "</i>");
+  };
+})(window);
+
+
+</script>
+
+
+  </body>
+</html>
