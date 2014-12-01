@@ -24,6 +24,7 @@ Installation and Heroku Deployment
 Grunt
 -----
 
+* `grunt` - jshints scripts; compiles less; compiles handlebars templates.
 * `grunt watch` - jshint's scripts; compiles less; compiles handlebars templates.
 * `grunt release` - Creates production directory - minified + concatenated + obsfucated JS; minified CSS; modified index.html.
 * `grunt heroku` - Pushes the production directory to heroku.

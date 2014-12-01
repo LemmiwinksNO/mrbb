@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     // Empty and remove 'dist/' directory
     clean: {
       release: ["dist/"],
-      bower: ["assets/js/vendor/", "assets/styles/vendor"]
+      // bower: ["assets/js/vendor/", "assets/styles/vendor"]
+      bower: ["assets/js/vendor/"]
     },
 
     // Runs the application JavaScript through JSHint with the defaults.
@@ -113,11 +114,11 @@ module.exports = function(grunt) {
         options: {
           namespace: "JST",
           processName: function(filePath) {
-            return filePath.replace(/^assets\/js\/apps\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
+            return filePath.replace(/^assets\/js\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
           }
         },
         files: {
-          "assets/js/templates.js": "assets/js/apps/**/*.hbs"
+          "assets/js/templates.js": "assets/js/**/*.hbs"
         }
       }
     },
@@ -132,10 +133,10 @@ module.exports = function(grunt) {
       },
       less: {
         files: ["assets/styles/**/*.less"],
-        tasks: ["less:dev"]
+        tasks: ["less:main"]
       },
       templates: {
-        files: ["assets/js/apps/**/*.hbs", "assets/templates/**/*.hbs"],
+        files: ["assets/js/**/*.hbs"],
         tasks: ["handlebars:compile"]
       }
     },
@@ -167,6 +168,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   // Custom tasks
+  grunt.registerTask("default", ["jshint", "handlebars", "less"]);
   grunt.registerTask("release", ["clean:release", "jshint", "handlebars", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
 
   // Heroku task called by heroku server when we deploy.
@@ -174,6 +176,7 @@ module.exports = function(grunt) {
   // grunt.registerTask("heroku:production", ["release"]);
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
+  // NOTE: This first empties js vendor and styles vendor directories.
   grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
 
   // Heroku deploy task
