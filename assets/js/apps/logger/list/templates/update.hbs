@@ -1,0 +1,10 @@
+<form class="form-horizontal" role="form">
+  {{#each items}}
+  <div class="form-group">
+    <label for="log-input-{{@key}}" class="col-sm-4 control-label">{{@key}}</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="log-input-{{@key}}" value="{{this}}">
+    </div>
+  </div>
+  {{/each}}
+</form>
