@@ -1,4 +1,8 @@
-define(['app'], function(App){
+
+define([
+  'app',
+  'apps/tasklist-rjs/list/list_controller'
+], function(App, ListController){
 
   // Another way to do this
   var Router = Marionette.AppRouter.extend({
@@ -7,11 +11,9 @@ define(['app'], function(App){
     }
   });
 
-  API = {
+  var API = {
     list: function(){
-      require(["apps/tasklist-rjs/list/list_controller"], function(ListController){
-        new ListController();
-      });
+      new ListController();
     }
   };
 
@@ -20,5 +22,4 @@ define(['app'], function(App){
   });
 
   return ;
-
 });

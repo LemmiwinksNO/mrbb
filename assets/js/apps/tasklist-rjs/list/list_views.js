@@ -1,26 +1,32 @@
-define(['app', 'bootstrap', 'templates'], function(App){
+define([
+  'app',
+  'bootstrap',
+  'templates'
+], function(App){
 
   // Is there any advantage to this approach vs. creating 'View' as a function and
   // instantiating it? User never has more than one of this 'View' at a time.
   var View = {};
 
   View.Layout = Marionette.LayoutView.extend({
-    template: "tasklist-rjs/list/layout",
+    template: 'apps/tasklist-rjs/list/layout',
 
     regions: {
-      focusRegion: "#focus-region"
+      focusRegion: '#focus-region'
     }
   });
 
   View.Task = Marionette.ItemView.extend({
-    template: "tasklist-rjs/list/task"
+    template: 'apps/tasklist-rjs/list/task',
+    tagName: 'li',
+    className: 'task uncompleted color-neutral'
   });
 
   View.Focus = Marionette.CompositeView.extend({
-    template: "tasklist-rjs/list/focus",
-    className: "col-md-4 col-sm-6",
+    template: 'apps/tasklist-rjs/list/focus',
+    className: 'col-md-4 col-sm-6',
     childView: View.Task,
-    childViewContainer: "ul.task-list",
+    childViewContainer: 'ul.task-list',
 
     initialize: function(options){
       // Since we do composite on composite, we need to set the collection
@@ -30,10 +36,10 @@ define(['app', 'bootstrap', 'templates'], function(App){
   });
 
   View.FocusList = Marionette.CompositeView.extend({
-    template: "tasklist-rjs/list/focus_list",
-    className: "focus-list container",
+    template: 'apps/tasklist-rjs/list/focus_list',
+    className: 'focus-list container',
     childView: View.Focus,
-    childViewContainer: ".row",
+    childViewContainer: '.row',
   });
 
   return View;

@@ -1,28 +1,29 @@
-define(['app', 'apps/tasklist-rjs/list/list_views'], function(App, View){
+define([
+  'app',
+  'apps/tasklist-rjs/list/list_views',
+  'entities/focus'
+], function(App, View){
 
   var ListController = Marionette.Controller.extend({
 
     initialize: function(options) {
-      this.region = this.options.region || App.request("default:region");
+      this.region = this.options.region || App.request('default:region');
       this.layout = this.getLayoutView();
-      var view = this;
 
       // Fetch our entities
-      require(["entities/focus"], function(){
-        var fetchingFocusCollection = App.request("focus:entities");
-        $.when(fetchingFocusCollection).done(function(focusCollection){
+      var fetchingFocusCollection = App.request('focus:entities');
+      $.when(fetchingFocusCollection).done(function(focusCollection){
 
-          // Wait until layout's show event is fired before showing its regions.
-          view.listenTo(view.layout, 'show', function(){
-            view.focusRegion(focusCollection);
-          });
-
-          // Show layout in mainRegion and listen to its close event so we
-          // can clean up this controller.
-          view.listenTo(view.layout, "close", view.close);
-          view.region.show(view.layout);
+        // Wait until layout's show event is fired before showing its regions.
+        this.listenTo(this.layout, 'show', function() {
+          this.focusRegion(focusCollection);
         });
-      });
+
+        // Show layout in mainRegion and listen to its close event so we
+        // can clean up this controller.
+        this.listenTo(this.layout, 'destroy', this.destroy);
+        this.region.show(this.layout);
+      }.bind(this));
     },
 
     // Setup and show focusRegion

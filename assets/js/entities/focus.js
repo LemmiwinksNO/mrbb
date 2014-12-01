@@ -1,16 +1,19 @@
-define(['app', 'backbone.localstorage'], function(App){
 
-  var Focus = new Backbone.Model();
+define([
+  'app',
+  'backbone.localstorage'
+], function(App) {
+
+  // var Focus = new Backbone.Model();
+  var Focus = new Backbone.Model.extend();
 
   var FocusCollection = Backbone.Collection.extend({
-
     localStorage: new Backbone.LocalStorage("FocusCollection"),
-
     model: Focus
   });
 
-  API = {
-    getFocusCollection: function(){
+  var API = {
+    getFocusCollection: function() {
       var focusCollection = new Backbone.Collection([
         {
           title: "Programming",
