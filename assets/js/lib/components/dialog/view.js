@@ -5,7 +5,7 @@ define([
   var View = {};
 
   View.Layout = Marionette.LayoutView.extend({
-    template: 'lib/dialog/layout',
+    template: 'lib/components/dialog/layout',
     className: 'modal fade',
     regions: {
       'headerRegion': '#modal-header-region',
@@ -15,15 +15,15 @@ define([
   });
 
   View.Header = Marionette.ItemView.extend({
-    template: 'lib/dialog/header'
+    template: 'lib/components/dialog/header'
   });
 
   View.Footer = Marionette.ItemView.extend({
-    template: 'lib/dialog/footer'
+    template: 'lib/components/dialog/footer'
   });
 
   View.Body = Marionette.ItemView.extend({
-    template: 'lib/dialog/body'
+    template: 'lib/components/dialog/body'
   });
 
   return View;

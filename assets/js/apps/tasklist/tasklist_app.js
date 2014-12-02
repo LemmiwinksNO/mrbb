@@ -1,7 +1,7 @@
 
 define([
   'app',
-  'apps/tasklist-rjs/list/list_controller'
+  'apps/tasklist/list/list_controller'
 ], function(App, ListController){
 
   // Another way to do this

@@ -29,10 +29,6 @@ define([
 
   // Initializers
   // App.addInitializer(function(){
-    // require(["apps/header/header_app"], function(){
-    //   App.module("HeaderApp").trigger('start');
-    // });
-
     // require(["apps/header-rjs/header_app"], function(HeaderApp){
       // HeaderApp.start(App.headerRegion);
     // });
@@ -40,7 +36,7 @@ define([
 
   // Initializers - right now I'm using this to load some files I want loaded (dialog widget)
   App.addInitializer(function() {
-    require(['lib/dialog/controller']);
+    require(['lib/components/dialog/controller']);
   });
 
   // Default region apps can request.
@@ -53,7 +49,7 @@ define([
   App.on('start', function() {
     if (Backbone.history) {
       // Require our module parent files because they have routes in them.
-      require(['apps/header-rjs/header_app', 'apps/tasklist-rjs/tasklist_app', 'apps/logger/logger_app'], function(){
+      require(['apps/header-rjs/header_app', 'apps/tasklist/tasklist_app', 'apps/logger/logger_app'], function(){
         Backbone.history.start();
         if (Backbone.history.fragment === '') {
           Backbone.history.navigate(App.rootRoute, {trigger: true});

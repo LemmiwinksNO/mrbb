@@ -2,7 +2,7 @@ define([
   'app',
   'apps/logger/list/list_view',
   'entities/log'
-], function(App, View){
+], function(App, View) {
 
   var ListController = Marionette.Controller.extend({
     initialize: function(options) {
@@ -36,11 +36,15 @@ define([
     },
 
     clickLog: function(childView, args) {
-      var updateView = this.getUpdateView(args.model);
-      App.execute('dialog', {
-        title: 'Log ' + args.model.get('date'),
-        bodyView: updateView
-      });
+      console.log('clickLog');
+      // Let edit submodule handle this.
+      App.vent.trigger('log:clicked', args.model);
+
+      // var updateView = this.getUpdateView(args.model);
+      // App.execute('dialog', {
+      //   title: 'Log ' + args.model.get('date'),
+      //   bodyView: updateView
+      // });
     },
 
     getUpdateView: function(model) {

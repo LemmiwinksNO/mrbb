@@ -1,6 +1,6 @@
 define([
   'app',
-  'lib/dialog/view'
+  'lib/components/dialog/view'
 ], function(App, View) {
 
   var DialogController = Marionette.Controller.extend({

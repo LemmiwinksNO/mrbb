@@ -1,6 +1,6 @@
 define([
   'app',
-  'apps/tasklist-rjs/list/list_views',
+  'apps/tasklist/list/list_views',
   'entities/focus'
 ], function(App, View){
 
