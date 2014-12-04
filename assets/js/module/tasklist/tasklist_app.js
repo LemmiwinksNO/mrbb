@@ -1,7 +1,7 @@
 
 define([
   'app',
-  'apps/tasklist/list/list_controller'
+  'module/tasklist/list/list_controller'
 ], function(App, ListController){
 
   // Another way to do this

@@ -29,7 +29,7 @@ define([
 
   // Initializers
   // App.addInitializer(function(){
-    // require(["apps/header-rjs/header_app"], function(HeaderApp){
+    // require(["module/header/header_app"], function(HeaderApp){
       // HeaderApp.start(App.headerRegion);
     // });
   // });
@@ -49,7 +49,7 @@ define([
   App.on('start', function() {
     if (Backbone.history) {
       // Require our module parent files because they have routes in them.
-      require(['apps/header-rjs/header_app', 'apps/tasklist/tasklist_app', 'apps/logger/logger_app'], function(){
+      require(['module/header/header_app', 'module/tasklist/tasklist_app', 'module/logger/logger_app'], function(){
         Backbone.history.start();
         if (Backbone.history.fragment === '') {
           Backbone.history.navigate(App.rootRoute, {trigger: true});

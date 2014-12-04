@@ -1,8 +1,10 @@
-define(['app'], function(App){
+define([
+  'app'
+], function(App){
 
   API = {
     list: function(region){
-      require(["apps/header-rjs/list/list_controller"], function(ListController){
+      require(["module/header/list/list_controller"], function(ListController){
         new ListController({
           region: region
         });

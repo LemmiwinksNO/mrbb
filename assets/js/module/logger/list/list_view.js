@@ -7,7 +7,7 @@ define([
   var View = {};
 
   View.Layout = Marionette.LayoutView.extend({
-    template: 'apps/logger/list/layout',
+    template: 'module/logger/list/layout',
 
     regions: {
       logRegion: '#log-region'
@@ -15,7 +15,7 @@ define([
   });
 
   View.Log = Marionette.ItemView.extend({
-    template: 'apps/logger/list/log',
+    template: 'module/logger/list/log',
     className: 'log-list-item list-group-item',
     triggers: {
       'click': 'log:clicked'
@@ -23,14 +23,14 @@ define([
   });
 
   View.LogList = Marionette.CompositeView.extend({
-    template: 'apps/logger/list/log_list',
+    template: 'module/logger/list/log_list',
     childView: View.Log,
     childViewContainer: '.log-list',
     className: 'container'
   });
 
   View.Update = Marionette.ItemView.extend({
-    template: 'apps/logger/list/update'
+    template: 'module/logger/list/update'
   });
 
   return View;

@@ -45,7 +45,7 @@ define([
     }
   };
 
-  App.reqres.setHandler("focus:entities", function(){
+  App.reqres.setHandler("entity:focus", function(){
     return API.getFocusCollection();
   });
 

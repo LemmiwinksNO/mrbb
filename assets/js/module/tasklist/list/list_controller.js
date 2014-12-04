@@ -1,7 +1,7 @@
 define([
   'app',
-  'apps/tasklist/list/list_views',
-  'entities/focus'
+  'module/tasklist/list/list_views',
+  'entity/focus'
 ], function(App, View){
 
   var ListController = Marionette.Controller.extend({
@@ -11,7 +11,7 @@ define([
       this.layout = this.getLayoutView();
 
       // Fetch our entities
-      var fetchingFocusCollection = App.request('focus:entities');
+      var fetchingFocusCollection = App.request('entity:focus');
       $.when(fetchingFocusCollection).done(function(focusCollection){
 
         // Wait until layout's show event is fired before showing its regions.

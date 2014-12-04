@@ -1,7 +1,7 @@
 define([
   'app',
-  'apps/logger/list/list_controller',
-  'apps/logger/edit/edit_controller'
+  'module/logger/list/list_controller',
+  'module/logger/edit/edit_controller'
 ], function(App, ListController, EditController) {
 
   var Router = Marionette.AppRouter.extend({

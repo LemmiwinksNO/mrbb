@@ -1,7 +1,7 @@
 define([
   'app',
-  'apps/logger/edit/edit_view',
-  // 'entities/log'
+  'module/logger/edit/edit_view',
+  // 'entity/log'
 ], function(App, View) {
 
   var EditController = Marionette.Controller.extend({

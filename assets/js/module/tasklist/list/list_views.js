@@ -9,7 +9,7 @@ define([
   var View = {};
 
   View.Layout = Marionette.LayoutView.extend({
-    template: 'apps/tasklist-rjs/list/layout',
+    template: 'module/tasklist/list/layout',
 
     regions: {
       focusRegion: '#focus-region'
@@ -17,13 +17,13 @@ define([
   });
 
   View.Task = Marionette.ItemView.extend({
-    template: 'apps/tasklist-rjs/list/task',
+    template: 'module/tasklist/list/task',
     tagName: 'li',
     className: 'task uncompleted color-neutral'
   });
 
   View.Focus = Marionette.CompositeView.extend({
-    template: 'apps/tasklist-rjs/list/focus',
+    template: 'module/tasklist/list/focus',
     className: 'col-md-4 col-sm-6',
     childView: View.Task,
     childViewContainer: 'ul.task-list',
@@ -36,7 +36,7 @@ define([
   });
 
   View.FocusList = Marionette.CompositeView.extend({
-    template: 'apps/tasklist-rjs/list/focus_list',
+    template: 'module/tasklist/list/focus_list',
     className: 'focus-list container',
     childView: View.Focus,
     childViewContainer: '.row',

@@ -7,7 +7,7 @@ define([
   var View = {};
 
   View.Edit = Marionette.ItemView.extend({
-    template: 'apps/logger/edit/edit'
+    template: 'module/logger/edit/edit'
   });
 
   return View;
