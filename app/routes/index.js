@@ -6,6 +6,7 @@ var router = express.Router();
 
 var API = {};
 API.bears = require('../controllers/bears');
+API.daylog = require('../controllers/daylog');
 
 
 // middleware to use for all requests (many uses for this - validation of request;
@@ -29,5 +30,13 @@ router
   .get('/bears/:bear_id', API.bears.get)
   .put('/bears/:bear_id', API.bears.update)
   .delete('/bears/:bear_id', API.bears.delete);
+
+// Log routes
+router
+  .post('/daylog', API.daylog.create)
+  .get('/daylog', API.daylog.getAll)
+  .get('/daylog/:daylog_id', API.daylog.get)
+  .put('/daylog/:daylog_id', API.daylog.update)
+  .delete('/daylog/:daylog_id', API.daylog.delete);
 
 module.exports = router;

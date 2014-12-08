@@ -22,6 +22,7 @@ app.use(bodyParser());
 
 // lets you access everything rather than just /public or /app
 app.use(express.static(__dirname));
+// app.use(express.static(__dirname + '/dist')); // For testing production
 
 var port = process.env.PORT || 4000;
 
