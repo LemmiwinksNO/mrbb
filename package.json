@@ -28,6 +28,7 @@
     "grunt-contrib-requirejs": "*",
     "grunt-contrib-watch": "*",
     "grunt-processhtml": "*",
-    "grunt-shell": "*"
+    "grunt-shell": "*",
+    "grunt-uncss": "^0.3.8"
   }
 }

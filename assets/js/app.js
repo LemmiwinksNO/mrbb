@@ -1,9 +1,7 @@
 
 define([
   'marionette',
-  'handlebars'
-], function(Marionette, Handlebars) {
-  window.Handlebars = Handlebars;
+], function(Marionette) {
 
   // Update Marionette Renderer to work with our precompiled hbs templates
   Marionette.Renderer.render = function(template, data) {

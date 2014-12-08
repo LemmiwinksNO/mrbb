@@ -6,8 +6,6 @@ define([
 
   var ListController = Marionette.Controller.extend({
     initialize: function(options) {
-      console.log('Logger init');
-
       this.region = options.region || App.request('default:region');
       this.layout = this.getLayoutView();
 

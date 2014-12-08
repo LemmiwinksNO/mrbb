@@ -71,6 +71,21 @@ module.exports = function(grunt) {
       }
     },
 
+    // I think this works. It grabs stylesheet(s) from index.html, then grabs selectors etc. from
+    // my  templates. Reduced to 23.86kb instead of 2kb... (24.29 when I add to ignore list)
+    // NOTE: Still not working but getting closer. It is missing selectors still. They could be in my views.
+    //  THIS HELPED. But still needs work.
+    uncss: {
+      release: {
+        files: {
+          "dist/assets/styles/index.min.css": ["dist/index.html", 'assets/**/*.hbs']
+        }
+      },
+      options: {
+        ignore: ['.task', '.uncompleted', '.color-neutral', '.col-md-4', '.col-sm-6', '.focus-list', '.container', '.log-list-item', '.list-group-item', '.modal', '.fade'] 
+      }
+    },
+
     copy: {
       release: {
         files: [
@@ -115,7 +130,8 @@ module.exports = function(grunt) {
           namespace: "JST",
           processName: function(filePath) {
             return filePath.replace(/^assets\/js\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
-          }
+          },
+          amd: ['handlebars']
         },
         files: {
           "assets/js/templates.js": "assets/js/**/*.hbs"
@@ -164,6 +180,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-handlebars");
 
   // Third-party tasks
+  grunt.loadNpmTasks("grunt-uncss");
   grunt.loadNpmTasks("grunt-processhtml");
   grunt.loadNpmTasks('grunt-shell');
 
