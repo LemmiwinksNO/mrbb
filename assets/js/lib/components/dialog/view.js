@@ -19,7 +19,10 @@ define([
   });
 
   View.Footer = Marionette.ItemView.extend({
-    template: 'lib/components/dialog/footer'
+    template: 'lib/components/dialog/footer',
+    triggers: {
+      'click #dialog-save': 'dialog:save:clicked'
+    }
   });
 
   View.Body = Marionette.ItemView.extend({

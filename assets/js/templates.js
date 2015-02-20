@@ -9,7 +9,7 @@ this["JST"]["lib/components/dialog/body"] = Handlebars.template({"compiler":[6,"
 
 
 this["JST"]["lib/components/dialog/footer"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n  <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n</div>";
+  return "<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n  <button type=\"button\" id=\"dialog-save\" class=\"btn btn-primary\">Save changes</button>\n</div>";
   },"useData":true});
 
 
@@ -36,12 +36,17 @@ this["JST"]["module/header/list/header"] = Handlebars.template({"compiler":[6,">
 
 
 this["JST"]["module/logger/edit/edit"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
+  var stack1, buffer = "";
+  stack1 = helpers.each.call(depth0, depth0, {"name":"each","hash":{},"fn":this.program(2, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  return buffer;
+},"2":function(depth0,helpers,partials,data) {
   var lambda=this.lambda, escapeExpression=this.escapeExpression;
   return "  <div class=\"form-group\">\n    <label for=\"log-input-"
     + escapeExpression(lambda((data && data.key), depth0))
     + "\" class=\"col-sm-4 control-label\">"
     + escapeExpression(lambda((data && data.key), depth0))
-    + "</label>\n    <div class=\"col-sm-7\">\n      <input type=\"text\" class=\"form-control\" id=\"log-input-"
+    + "</label>\n    <div class=\"col-sm-7\">\n      <input type=\"text\" class=\"form-control\" name=\""
     + escapeExpression(lambda((data && data.key), depth0))
     + "\" value=\""
     + escapeExpression(lambda(depth0, depth0))
@@ -50,7 +55,7 @@ this["JST"]["module/logger/edit/edit"] = Handlebars.template({"1":function(depth
   var stack1, buffer = "<form class=\"form-horizontal\" role=\"form\">\n";
   stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.items : depth0), {"name":"each","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  return buffer + "</form>";
+  return buffer + " </form>";
 },"useData":true});
 
 
@@ -65,13 +70,15 @@ this["JST"]["module/logger/list/log"] = Handlebars.template({"compiler":[6,">= 2
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
   return "<h4 class=\"list-group-item-heading\">\n  <span><i class=\"fa fa-circle-o\"></i></span>\n  <span>"
     + escapeExpression(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"date","hash":{},"data":data}) : helper)))
+    + "</span>\n  <span>"
+    + escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"name","hash":{},"data":data}) : helper)))
     + "</span>\n</h4>\n";
 },"useData":true});
 
 
 
 this["JST"]["module/logger/list/log_list"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "<h3>Logger</h3>\n<div class=\"log-list list-group\"></div>";
+  return "<h3><button type=\"button\" id=\"new-day-log\" class=\"btn btn-primary\">Add</button></h3>\n<div class=\"log-list list-group\"></div>";
   },"useData":true});
 
 

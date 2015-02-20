@@ -29,13 +29,22 @@ define([
 
     logRegion: function(collection) {
       var logListView = this.getLogListView(collection);
+
       this.listenTo(logListView, 'childview:log:clicked', this.clickLog);
+      this.listenTo(logListView, 'new:daylog:clicked', this.clickNewDayLog);
+
       this.layout.logRegion.show(logListView);
     },
 
     clickLog: function(childView, args) {
       // Let edit submodule handle this.
       App.vent.trigger('log:clicked', args.model);
+    },
+
+    clickNewDayLog: function(args) {
+      console.log('clickNewDayLog');
+      // Let edit submodule handle this.
+      App.vent.trigger('new:daylog:clicked');
     },
 
     getUpdateView: function(model) {

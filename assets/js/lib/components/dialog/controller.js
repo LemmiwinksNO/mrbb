@@ -8,6 +8,8 @@ define([
     initialize: function(options) {
       this.region = App.dialogRegion;
       this.layout = this.getLayoutView();
+      this.$modal = this.layout.$el;
+      this.bodyView = this.options.bodyView || new View.Body();
 
       this.listenTo(this.layout, 'show', function() {
         this.headerRegion();
@@ -34,12 +36,18 @@ define([
 
     footerRegion: function() {
       var footerView = new View.Footer();
+
+      this.listenTo(footerView, 'dialog:save:clicked', function() {
+        this.bodyView.trigger('dialog:save:clicked', {
+          $modal: this.$modal
+        });
+      });
+
       this.layout.footerRegion.show(footerView);
     },
 
     bodyRegion: function() {
-      var bodyView = this.options.bodyView || new View.Body();
-      this.layout.bodyRegion.show(bodyView);
+      this.layout.bodyRegion.show(this.bodyView);
     }
   });
 

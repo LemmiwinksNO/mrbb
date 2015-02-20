@@ -26,7 +26,10 @@ define([
     template: 'module/logger/list/log_list',
     childView: View.Log,
     childViewContainer: '.log-list',
-    className: 'container'
+    className: 'container',
+    triggers: {
+      'click #new-day-log': 'new:daylog:clicked'
+    }
   });
 
   View.Update = Marionette.ItemView.extend({

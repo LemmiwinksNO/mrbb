@@ -19,6 +19,10 @@ define([
       new EditController({
         model: model
       });
+    },
+
+    newDayLog: function() {
+      new EditController();
     }
   };
 
@@ -28,6 +32,10 @@ define([
 
   App.vent.on('log:clicked', function(model) {
     API.edit(model);
+  });
+
+  App.vent.on('new:daylog:clicked', function() {
+    API.newDayLog();
   });
 
   return;
