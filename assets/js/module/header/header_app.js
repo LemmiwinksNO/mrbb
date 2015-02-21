@@ -4,7 +4,7 @@ define([
 
   API = {
     list: function(region){
-      require(["module/header/list/list_controller"], function(ListController){
+      require(['module/header/list/list_controller'], function(ListController){
         new ListController({
           region: region
         });

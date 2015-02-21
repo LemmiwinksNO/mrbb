@@ -7,7 +7,7 @@ define([
   // Another way to do this
   var Router = Marionette.AppRouter.extend({
     appRoutes: {
-      "tasklist" : "list"
+      'tasklist' : 'list'
     }
   });
 

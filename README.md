@@ -3,7 +3,7 @@ Installation and Heroku Deployment
 
 1. Install Node and NPM - [Install via package-manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 2. Install Bower - `npm install -g bower`
-3. Install Grunt Command Line Interface - `npm install -g grunt-cli
+3. Install Grunt Command Line Interface - `npm install -g grunt-cli'
 4. Install Heroku Toolbelt - https://toolbelt.heroku.com/
 5. Install MongoDb - http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 6. `git clone https://github.com/LemmiwinksNO/mrbb`

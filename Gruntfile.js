@@ -5,14 +5,14 @@ module.exports = function(grunt) {
 
     // Empty and remove 'dist/' directory
     clean: {
-      release: ["dist/"],
-      // bower: ["assets/js/vendor/", "assets/styles/vendor"]
-      bower: ["assets/js/vendor/"]
+      release: ['dist/'],
+      // bower: ['assets/js/vendor/', 'assets/styles/vendor']
+      bower: ['assets/js/vendor/']
     },
 
     // Runs the application JavaScript through JSHint with the defaults.
     jshint: {
-      files: ["assets/js/**/*.js"]
+      files: ['assets/js/**/*.js']
     },
 
     // Compile LESS, compress it and create a sourcemap so we can
@@ -24,11 +24,11 @@ module.exports = function(grunt) {
           yuicompress: true,
           optimization: 2,
           sourceMap: true,
-          sourceMapFilename: "assets/styles/main.css.map",
-          sourceMapBasepath: "assets/styles",
+          sourceMapFilename: 'assets/styles/main.css.map',
+          sourceMapBasepath: 'assets/styles',
         },
         files: {
-          "assets/styles/index.css": "assets/styles/index.less"
+          'assets/styles/index.css': 'assets/styles/index.less'
         }
       }
     },
@@ -38,21 +38,21 @@ module.exports = function(grunt) {
     requirejs: {
       release: {
         options: {
-          mainConfigFile: "assets/js/main.js",
+          mainConfigFile: 'assets/js/main.js',
           generateSourceMaps: true,
-          include: ["main"],
+          include: ['main'],
           findNestedDependencies: true,
-          out: "dist/assets/js/source.min.js",
-          optimize: "uglify2",
-          baseUrl: "assets/js",
+          out: 'dist/assets/js/source.min.js',
+          optimize: 'uglify2',
+          baseUrl: 'assets/js',
 
           paths: {
-            // "almond": "../../vendor/almond/almond"
-            "almond": "vendor/almond"
+            // 'almond': '../../vendor/almond/almond'
+            'almond': 'vendor/almond'
           },
 
           // Include a minimal AMD implementation shim.
-          name: "almond",
+          name: 'almond',
 
           // Wrap everything in an IIFE.
           wrap: true,
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     cssmin: {
       release: {
         files: {
-          "dist/assets/styles/index.min.css": ["assets/styles/index.css"]
+          'dist/assets/styles/index.min.css': ['assets/styles/index.css']
         }
       }
     },
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
     uncss: {
       release: {
         files: {
-          "dist/assets/styles/index.min.css": ["dist/index.html", 'assets/**/*.hbs']
+          'dist/assets/styles/index.min.css': ['dist/index.html', 'assets/**/*.hbs']
         }
       },
       options: {
@@ -89,27 +89,27 @@ module.exports = function(grunt) {
     copy: {
       release: {
         files: [
-          { src: ["assets/images/**"], dest: "dist/"},
-          { src: ["server.js"], dest: "dist/server.js"},
-          { src: ["Procfile"], dest: "dist/Procfile"},
-          { src: ["package.json"], dest: "dist/package.json"},
+          { src: ['assets/images/**'], dest: 'dist/'},
+          { src: ['server.js'], dest: 'dist/server.js'},
+          { src: ['Procfile'], dest: 'dist/Procfile'},
+          { src: ['package.json'], dest: 'dist/package.json'},
         ]
       },
       // Copy over relevant files from bower install
       bower: {
         files: [
-          { src: ["vendor/almond/almond.js"], dest: "assets/js/vendor/almond.js"},
-          { src: ["vendor/jquery/dist/jquery.js"], dest: "assets/js/vendor/jquery.js"},
-          { src: ["vendor/underscore/underscore.js"], dest: "assets/js/vendor/underscore.js"},
-          { src: ["vendor/backbone/backbone.js"], dest: "assets/js/vendor/backbone.js"},
-          { src: ["vendor/marionette/lib/backbone.marionette.js"], dest: "assets/js/vendor/backbone.marionette.js"},
-          { src: ["vendor/bootstrap/dist/js/bootstrap.js"], dest: "assets/js/vendor/bootstrap.js"},
-          { src: ["vendor/handlebars/handlebars.runtime.js"], dest: "assets/js/vendor/handlebars.runtime.js"},
-          { src: ["vendor/backbone.syphon/lib/backbone.syphon.js"], dest: "assets/js/vendor/backbone.syphon.js"},
-          { src: ["vendor/backbone.wreqr/lib/backbone.wreqr.js"], dest: "assets/js/vendor/backbone.wreqr.js"},
-          { src: ["vendor/backbone.localstorage/backbone.localStorage.js"], dest: "assets/js/vendor/backbone.localStorage.js"},
-          { src: ["vendor/bootstrap/less/**"], dest: "assets/styles/"},
-          { src: ["vendor/font-awesome/less/**"], dest: "assets/styles/"},
+          { src: ['vendor/almond/almond.js'], dest: 'assets/js/vendor/almond.js'},
+          { src: ['vendor/jquery/dist/jquery.js'], dest: 'assets/js/vendor/jquery.js'},
+          { src: ['vendor/underscore/underscore.js'], dest: 'assets/js/vendor/underscore.js'},
+          { src: ['vendor/backbone/backbone.js'], dest: 'assets/js/vendor/backbone.js'},
+          { src: ['vendor/marionette/lib/backbone.marionette.js'], dest: 'assets/js/vendor/backbone.marionette.js'},
+          { src: ['vendor/bootstrap/dist/js/bootstrap.js'], dest: 'assets/js/vendor/bootstrap.js'},
+          { src: ['vendor/handlebars/handlebars.runtime.js'], dest: 'assets/js/vendor/handlebars.runtime.js'},
+          { src: ['vendor/backbone.syphon/lib/backbone.syphon.js'], dest: 'assets/js/vendor/backbone.syphon.js'},
+          { src: ['vendor/backbone.wreqr/lib/backbone.wreqr.js'], dest: 'assets/js/vendor/backbone.wreqr.js'},
+          { src: ['vendor/backbone.localstorage/backbone.localStorage.js'], dest: 'assets/js/vendor/backbone.localStorage.js'},
+          { src: ['vendor/bootstrap/less/**'], dest: 'assets/styles/'},
+          { src: ['vendor/font-awesome/less/**'], dest: 'assets/styles/'},
         ]
       }
     },
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
     processhtml: {
       release: {
         files: {
-          "dist/index.html": ["index.html"]
+          'dist/index.html': ['index.html']
         }
       }
     },
@@ -127,14 +127,14 @@ module.exports = function(grunt) {
     handlebars: {
       compile: {
         options: {
-          namespace: "JST",
+          namespace: 'JST',
           processName: function(filePath) {
             return filePath.replace(/^assets\/js\//, '').replace(/templates\//, '').replace(/\.hbs$/, '');
           },
           amd: ['handlebars']
         },
         files: {
-          "assets/js/templates.js": "assets/js/**/*.hbs"
+          'assets/js/templates.js': 'assets/js/**/*.hbs'
         }
       }
     },
@@ -144,16 +144,16 @@ module.exports = function(grunt) {
         livereload: true
       },
       scripts: {
-        files: ["assets/js/**/*.js"],
-        tasks: ["jshint"]
+        files: ['assets/js/**/*.js'],
+        tasks: ['jshint']
       },
       less: {
-        files: ["assets/styles/**/*.less"],
-        tasks: ["less:main"]
+        files: ['assets/styles/**/*.less'],
+        tasks: ['less:main']
       },
       templates: {
-        files: ["assets/js/**/*.hbs"],
-        tasks: ["handlebars:compile"]
+        files: ['assets/js/**/*.hbs'],
+        tasks: ['handlebars:compile']
       }
     },
 
@@ -170,32 +170,32 @@ module.exports = function(grunt) {
   });
 
   // Grunt contribution tasks
-  grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.loadNpmTasks("grunt-contrib-less");
-  grunt.loadNpmTasks("grunt-contrib-requirejs");
-  grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-handlebars");
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   // Third-party tasks
-  grunt.loadNpmTasks("grunt-uncss");
-  grunt.loadNpmTasks("grunt-processhtml");
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-shell');
 
   // Custom tasks
-  grunt.registerTask("default", ["jshint", "handlebars", "less"]);
-  grunt.registerTask("release", ["clean:release", "jshint", "handlebars", "less", "requirejs", "cssmin", "copy:release", "processhtml"]);
+  grunt.registerTask('default', ['jshint', 'handlebars', 'less']);
+  grunt.registerTask('release', ['clean:release', 'jshint', 'handlebars', 'less', 'requirejs', 'cssmin', 'copy:release', 'processhtml']);
 
   // Heroku task called by heroku server when we deploy.
   // https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
-  // grunt.registerTask("heroku:production", ["release"]);
+  // grunt.registerTask('heroku:production', ['release']);
 
   // Bower task. It should clean js/vendor and styles/vendor; shell:bower update; copy:bower
   // NOTE: This first empties js vendor and styles vendor directories.
-  grunt.registerTask("bower", ["clean:bower", "shell:bower", "copy:bower"]);
+  grunt.registerTask('bower', ['clean:bower', 'shell:bower', 'copy:bower']);
 
   // Heroku deploy task
-  grunt.registerTask("heroku", ["shell:heroku"]);
+  grunt.registerTask('heroku', ['shell:heroku']);
 };

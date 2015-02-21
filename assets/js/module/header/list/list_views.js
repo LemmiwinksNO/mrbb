@@ -6,7 +6,7 @@ define([
 
   var View = {
     Header: Marionette.ItemView.extend({
-      template: "module/header/list/header"
+      template: 'module/header/list/header'
     })
   };
 
