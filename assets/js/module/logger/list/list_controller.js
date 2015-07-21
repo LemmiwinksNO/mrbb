@@ -42,9 +42,8 @@ define([
     },
 
     clickNewDayLog: function(args) {
-      console.log('clickNewDayLog');
       // Let edit submodule handle this.
-      App.vent.trigger('new:daylog:clicked');
+      App.vent.trigger('new:daylog:clicked', args);
     },
 
     getUpdateView: function(model) {

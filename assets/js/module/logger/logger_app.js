@@ -21,8 +21,10 @@ define([
       });
     },
 
-    newDayLog: function() {
-      new EditController();
+    newDayLog: function(args) {
+      new EditController({
+        collection: args.collection
+      });
     }
   };
 
@@ -34,8 +36,8 @@ define([
     API.edit(model);
   });
 
-  App.vent.on('new:daylog:clicked', function() {
-    API.newDayLog();
+  App.vent.on('new:daylog:clicked', function(args) {
+    API.newDayLog(args);
   });
 
   return;

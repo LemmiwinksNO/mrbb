@@ -10,7 +10,7 @@ exports.create = function(req, res) {
     if (err)
       res.send(err);
 
-    res.json({ message: 'Bear created!' });
+    res.json(bear);
   });
 };
 
@@ -46,7 +46,7 @@ exports.update = function(req, res) {
       if (err)
         res.send(err);
 
-      res.json({ message: 'Bear updated!' });
+      res.json(bear);
     });
   });
 };

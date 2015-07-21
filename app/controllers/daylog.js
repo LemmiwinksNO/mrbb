@@ -70,6 +70,6 @@ function setAttributes(daylog, req, res) {
   daylog.save(function(err) {
     if (err){ res.send(err) };
 
-    res.json({ message: 'Daylog created or updated!' });
+    res.json(daylog);
   });
 }

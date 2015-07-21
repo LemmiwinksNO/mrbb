@@ -8,7 +8,15 @@ define([
   var EditController = Marionette.Controller.extend({
     initialize: function(options) {
       // Edit or New action (have model already, or request a new one)
-      var model = options.model || App.request('entity:log:new');
+      // var model = options.model || App.request('entity:log:new');
+
+      // Edit or New Action
+      if (options.model) {
+        model = options.model;
+      } else {
+        this.collection = options.collection;
+        model = App.request('entity:log:new');
+      }
 
       this.editView = this.getEditView(model);
 
@@ -43,15 +51,27 @@ define([
         items: items
       };
 
-      model.save(data, {
-        success: function() {
-          console.log('Logger Edit Save Success');
-          options.$modal.hide();
-        },
-        error: function() {
-          console.error('Logger Edit Save Error');
-        }
-      });
+      if (this.collection) {
+        this.collection.create(data, {
+          success: function() {
+            console.log('Logger Edit Create Success');
+            options.$modal.hide();
+          },
+          error: function() {
+            console.error('Logger Edit Create Error');
+          }
+        });
+      } else {
+        model.save(data, {
+          success: function() {
+            console.log('Logger Edit Update Success');
+            options.$modal.hide();
+          },
+          error: function() {
+            console.error('Logger Edit Update Error');
+          }
+        });
+      }
     },
 
     getEditView: function(model) {
